@@ -16,11 +16,10 @@
 Today you will be creating your initial MVC application for your Hotel management system.
 
 #### Scaffold
-- [ ] Scaffold out a basic MVC web application using the steps provided from class 11 & 13. Include a Home Controller with a basic Index action. No need to add any content to the Index view, just have it load a greeting for now. You will work more on the Home Controller a little further down.
+- [x] Scaffold out a basic MVC web application using the steps provided from class 11 & 13. Include a Home Controller with a basic Index action. No need to add any content to the Index view, just have it load a greeting for now. You will work more on the Home Controller a little further down.
 
 #### Entities to Models
 - [ ] Using your database schema, convert each entity into a model within your newly created MVC web application.
-
 - [ ] Following the steps provided, in addition to what we did in class, create a new DbContext named AsyncInnDbContext.
 - [ ] Within this DbContext, declare your Database tables and set your composite keys.
 
@@ -44,23 +43,23 @@ Throughout the week, we will slowly evolve this page to be more of a “dashboard”
 ### Evaluation
 To gain full credit for this “feature”, your branch must consist of:
 
-Startup File
-- [ ] Explicit routing of MVC
-- [ ] MVC dependency in ConfigureServices
-- [ ] DBContext registered in ConfigureServices
-- [ ]  of static files accepted
+#### Startup File
+- [x] Explicit routing of MVC
+- [x] MVC dependency in ConfigureServices
+- [x] DBContext registered in ConfigureServices
+- [x] Use of static files accepted
 
-Controller
-- [ ] Home Controller
+#### Controller
+- [x] Home Controller
 - [ ] Controllers for each of the pages described in the Design section (you do not have to scaffold if you don’t want to)
 
-Data
-- [ ] DBContext present and properly configured
+#### Data
+- [x] DBContext present and properly configured
 - [ ] DB Tables for each entity model (DbSet<T>)
 - [ ] Composite key association present in OnModelCreating override.
-- [ ] appsettings.json file present with name of database updated
+- [x] appsettings.json file present with name of database updated
 
-Models
+#### Models
 - [ ] Each Entity from the DB Table converted into a Model
 - [ ] Proper naming conventions of Primary keys, or utilization of the [Key] data annotation
 - [ ] Navigation properties present in each Model where required
