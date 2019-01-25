@@ -1,5 +1,8 @@
 # AsyncInn
 
+## DB Schema
+![DB Schema](Assets/SchemaAsyncInn.png)
+
 ### To Submit this Assignment
 - [x] Create a new repo on your personal GitHub account
 - [x] Name your repo AsyncInn
