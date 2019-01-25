@@ -1,9 +1,9 @@
 # AsyncInn
 
 ### To Submit this Assignment
-- [ ] Create a new repo on your personal GitHub account
-- [ ] Name your repo AsyncInn
-- [ ] Create a branch named NAME-LAB13
+- [x] Create a new repo on your personal GitHub account
+- [x] Name your repo AsyncInn
+- [x] Create a branch named NAME-LAB13
 - [ ] Write your code
 - [ ] Commit often
 - [ ] Push to your repository
