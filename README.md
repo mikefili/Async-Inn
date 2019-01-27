@@ -22,20 +22,21 @@ Today you will be creating your initial MVC application for your Hotel managemen
 - [x] Scaffold out a basic MVC web application using the steps provided from class 11 & 13. Include a Home Controller with a basic Index action. No need to add any content to the Index view, just have it load a greeting for now. You will work more on the Home Controller a little further down.
 
 #### Entities to Models
-- [ ] Using your database schema, convert each entity into a model within your newly created MVC web application.
-- [ ] Following the steps provided, in addition to what we did in class, create a new DbContext named AsyncInnDbContext.
-- [ ] Within this DbContext, declare your Database tables and set your composite keys.
+- [x] Using your database schema, convert each entity into a model within your newly created MVC web application.
+- [x] Following the steps provided, in addition to what we did in class, create a new DbContext named AsyncInnDbContext.
+- [x] Within this DbContext, declare your Database tables and set your composite keys.
 
 #### Design
 Think about the design of your website. What will it look like? What pages will exist? How do the pages interact and link to each other? For our website, we will have the following pages:
 
-- [ ]  Home Page to greet the Hotel Admin. This page will also serve as a dashboard for the other locations of the site.
-- [ ] Hotels page that will allow the admin to create and edit new or existing hotels
-- [ ] Rooms page where the admin will be able to create or edit new or existing rooms
-- [ ] Amenities page that will allow the admin to add to their list of existing amenities
-- [ ] A page where they can link the Amenities to the rooms that currently exist
-- [ ] A page where they can add existing rooms to hotels
-- [ ] Following the design, Create a controller for each of the pages listed above. You may “Add » Controller” on the controllers folder and scaffold out the basic CRUD operations if you wish.
+- [x]  Home Page to greet the Hotel Admin. This page will also serve as a dashboard for the other locations of the site.
+- [x] Hotels page that will allow the admin to create and edit new or existing hotels
+- [x] Rooms page where the admin will be able to create or edit new or existing rooms
+- [x] Amenities page that will allow the admin to add to their list of existing amenities
+- [x] A page where they can link the Amenities to the rooms that currently exist
+- [x] A page where they can add existing rooms to hotels
+
+Following the design, Create a controller for each of the pages listed above. You may “Add » Controller” on the controllers folder and scaffold out the basic CRUD operations if you wish.
 
 #### Home Page
 - [ ] Add some html and styling to your home page.
@@ -54,22 +55,22 @@ To gain full credit for this “feature”, your branch must consist of:
 
 #### Controller
 - [x] Home Controller
-- [ ] Controllers for each of the pages described in the Design section (you do not have to scaffold if you don’t want to)
+- [x] Controllers for each of the pages described in the Design section (you do not have to scaffold if you don’t want to)
 
 #### Data
 - [x] DBContext present and properly configured
-- [ ] DB Tables for each entity model (DbSet<T>)
-- [ ] Composite key association present in OnModelCreating override.
+- [x] DB Tables for each entity model (DbSet<T>)
+- [x] Composite key association present in OnModelCreating override.
 - [x] appsettings.json file present with name of database updated
 
 #### Models
-- [ ] Each Entity from the DB Table converted into a Model
-- [ ] Proper naming conventions of Primary keys, or utilization of the [Key] data annotation
-- [ ] Navigation properties present in each Model where required
-- [ ] Enum present in appropriate model
+- [x] Each Entity from the DB Table converted into a Model
+- [x] Proper naming conventions of Primary keys, or utilization of the [Key] data annotation
+- [x] Navigation properties present in each Model where required
+- [x] Enum present in appropriate model
 
 #### Views
-- [ ] View for home page that matches default routing
+- [x] View for home page that matches default routing
 
 #### Home Page
 - [ ] stylesheet present in web application
