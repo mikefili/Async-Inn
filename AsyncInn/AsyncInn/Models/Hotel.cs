@@ -13,6 +13,6 @@ namespace AsyncInn.Models
         public string Phone { get; set; }
 
         // navigation properties
-        public HotelRoom HotelRoom { get; set; }
+        public ICollection<HotelRoom> HotelRoom { get; set; }
     }
 }
