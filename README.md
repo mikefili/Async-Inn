@@ -19,7 +19,7 @@ Welcome, Async Inn staff, to the your new Administrator Portal. Use this applica
 - CRUD Operations provide users the ability to modify and manage rooms, amenities, and new hotel locations as they are built.
 
 ## User Interface Demo
-![UI Demo](/Assets/landing_page.png)
+![UI Demo](Assets/landing_page.PNG)
 
 ## System Design
 ![DB Schema](Assets/SchemaAsyncInn.png)
