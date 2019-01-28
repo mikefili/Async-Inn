@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AsyncInn.Migrations
 {
-    public partial class ControllersMigration : Migration
+    public partial class DBFix : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,7 @@ namespace AsyncInn.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -26,9 +26,9 @@ namespace AsyncInn.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: true),
-                    Address = table.Column<string>(nullable: true),
-                    Phone = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(nullable: false),
+                    Address = table.Column<string>(nullable: false),
+                    Phone = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -41,7 +41,7 @@ namespace AsyncInn.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: false),
                     Layout = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -54,11 +54,10 @@ namespace AsyncInn.Migrations
                 columns: table => new
                 {
                     HotelID = table.Column<int>(nullable: false),
-                    RoomID = table.Column<decimal>(nullable: false),
+                    RoomID = table.Column<int>(nullable: false),
                     RoomNumber = table.Column<int>(nullable: false),
                     Rate = table.Column<decimal>(nullable: false),
-                    MyProperty = table.Column<bool>(nullable: false),
-                    RoomID1 = table.Column<int>(nullable: true)
+                    PetFriendly = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -70,11 +69,11 @@ namespace AsyncInn.Migrations
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_HotelRooms_Rooms_RoomID1",
-                        column: x => x.RoomID1,
+                        name: "FK_HotelRooms_Rooms_RoomID",
+                        column: x => x.RoomID,
                         principalTable: "Rooms",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -102,9 +101,9 @@ namespace AsyncInn.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_HotelRooms_RoomID1",
+                name: "IX_HotelRooms_RoomID",
                 table: "HotelRooms",
-                column: "RoomID1");
+                column: "RoomID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_RoomAmenities_AmenitiesID",

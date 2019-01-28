@@ -22,7 +22,7 @@ namespace AsyncInn.Controllers
         // GET: HotelRooms
         public async Task<IActionResult> Index()
         {
-            var asyncInnDbContext = _context.HotelRooms.Include(h => h.Hotel);
+            var asyncInnDbContext = _context.HotelRooms.Include(h => h.Hotel).Include(h => h.Room);
             return View(await asyncInnDbContext.ToListAsync());
         }
 
@@ -49,6 +49,7 @@ namespace AsyncInn.Controllers
         public IActionResult Create()
         {
             ViewData["HotelID"] = new SelectList(_context.Hotels, "ID", "Address");
+            ViewData["RoomID"] = new SelectList(_context.Rooms, "ID", "Name");
             return View();
         }
 
@@ -57,7 +58,7 @@ namespace AsyncInn.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("HotelID,RoomNumber,RoomID,Rate,MyProperty")] HotelRoom hotelRoom)
+        public async Task<IActionResult> Create([Bind("HotelID,RoomID,RoomNumber,Rate,MyProperty")] HotelRoom hotelRoom)
         {
             if (ModelState.IsValid)
             {
@@ -66,6 +67,7 @@ namespace AsyncInn.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["HotelID"] = new SelectList(_context.Hotels, "ID", "Address", hotelRoom.HotelID);
+            ViewData["RoomID"] = new SelectList(_context.Rooms, "ID", "Name", hotelRoom.RoomID);
             return View(hotelRoom);
         }
 

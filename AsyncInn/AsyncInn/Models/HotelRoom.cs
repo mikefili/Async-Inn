@@ -9,12 +9,11 @@ namespace AsyncInn.Models
     public class HotelRoom
     {
         public int HotelID { get; set; }
+        public int RoomID { get; set; }
 
         [Required(ErrorMessage = "Please provide a number for the room")]
         [Display(Name = "Room Number   ")]
         public int RoomNumber { get; set; }
-
-        public decimal RoomID { get; set; }
 
         [Required(ErrorMessage = "Please provide a rate for the room")]
         [Display(Name = "Room Rate    ")]
