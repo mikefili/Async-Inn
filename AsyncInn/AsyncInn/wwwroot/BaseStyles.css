@@ -19,9 +19,24 @@ a:hover {
     color: #00abff;
 }
 
+.pad-top-s {
+    padding-top: 2.5vw;
+}
+
+.pad-top-m {
+    padding-top: 5vw;
+}
+
+.pad-top-l {
+    padding-top: 10vw;
+}
+
+.pad-top-xl {
+    padding-top: 15vw;
+}
+
 .welcome {
     font-size: 3vw;
-    padding-top: 15vw;
 }
 
 .logo {
@@ -41,4 +56,9 @@ ul.navigation li {
 
 ul.navigation li:last-child {
     padding-right: 0;
+}
+
+.CRUD {
+    font-variant-caps: all-petite-caps;
+    font-size: 4vw;
 }
