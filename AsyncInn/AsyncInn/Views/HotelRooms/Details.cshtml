@@ -21,8 +21,7 @@
         <li><a href="~/Amenities">Update Amenities</a></li>
     </ul>
 
-    <h2 class="pad-top-s CRUD">Hotel Room Details</h2>
-
+    <h2 class="pad-top-s CRUD">View Hotel Room Details</h2>
     <div>
         <h4>HotelRoom</h4>
         <hr />
@@ -50,6 +49,12 @@
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Hotel.Address)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Room)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Room.Name)
             </dd>
         </dl>
     </div>

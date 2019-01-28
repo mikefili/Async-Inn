@@ -21,8 +21,9 @@
         <li><a href="~/Amenities">Update Amenities</a></li>
     </ul>
 
-    <h2 class="pad-top-s CRUD">Add Room Details</h2>
+    <h2 class="pad-top-s CRUD">Add Hotel Room Details</h2>
 
+    <h4>HotelRoom</h4>
     <hr />
     <div class="row">
         <div class="col-md-4">
@@ -34,8 +35,7 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="RoomID" class="control-label"></label>
-                    <input asp-for="RoomID" class="form-control" />
-                    <span asp-validation-for="RoomID" class="text-danger" asp-items="ViewBag.RoomID"></span>
+                    <select asp-for="RoomID" class="form-control" asp-items="ViewBag.RoomID"></select>
                 </div>
                 <div class="form-group">
                     <label asp-for="RoomNumber" class="control-label"></label>
