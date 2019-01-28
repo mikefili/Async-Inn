@@ -11,12 +11,38 @@ body {
 
 a {
     font-variant-caps: all-petite-caps;
-    font-size: 1.75vw;
+    font-size: 2vw;
     color: white;
+    text-decoration: none;
+}
+
+.center {
+    margin: auto;
+}
+
+td {
+    padding: 0 2vw 0 2vw;
+}
+
+.table {
+    margin: auto;
+}
+
+th {
+    margin-right: 2vw;
 }
 
 a:hover {
-    color: #00abff;
+    background: -webkit-linear-gradient(#00abff, #006cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+}
+
+a.nav-s:hover {
+    border-left: 0.3rem solid white;
+    border-radius: 1rem;
+    padding-left: 1vw;
 }
 
 .pad-top-s {
@@ -40,13 +66,15 @@ a:hover {
 }
 
 .welcome {
-    font-size: 3vw;
+    font-size: 3.5vw;
 }
 
 .logo {
     font-family: 'Staatliches', Impact, Arial;
-    font-size: 5vw;
-    color: #00abff;
+    font-size: 7vw;
+    background: -webkit-linear-gradient(#00abff, #006cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 ul.navigation {
@@ -65,4 +93,5 @@ ul.navigation li:last-child {
 .CRUD {
     font-variant-caps: all-petite-caps;
     font-size: 4vw;
+    padding-bottom: 3vw;
 }

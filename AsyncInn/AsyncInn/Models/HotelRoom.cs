@@ -11,18 +11,18 @@ namespace AsyncInn.Models
         public int HotelID { get; set; }
 
         [Required(ErrorMessage = "Please provide a number for the room")]
-        [Display(Name = "Room Number ")]
+        [Display(Name = "Room Number   ")]
         public int RoomNumber { get; set; }
 
         public decimal RoomID { get; set; }
 
         [Required(ErrorMessage = "Please provide a rate for the room")]
-        [Display(Name = "Room Rate ")]
+        [Display(Name = "Room Rate    ")]
         [Range(0, 999.99)]
         public decimal Rate { get; set; }
 
         [Required(ErrorMessage = "Is the room pet friendly? Please confirm")]
-        [Display(Name = "Pet Friendly? ")]
+        [Display(Name = "Pet Friendly?    ")]
         public bool PetFriendly { get; set; }
 
         // navigation properties
