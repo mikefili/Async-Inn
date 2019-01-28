@@ -7,10 +7,10 @@
 - [x] Create a new repo on your personal GitHub account
 - [x] Name your repo AsyncInn
 - [x] Create a branch named NAME-LAB13
-- [ ] Write your code
-- [ ] Commit often
-- [ ] Push to your repository
-- [ ] Create a pull request from your branch back your master branch.
+- [x] Write your code
+- [x] Commit often
+- [x] Push to your repository
+- [x] Create a pull request from your branch back your master branch.
 - [ ] Submit a link to your PR in canvas
 - [ ] Merge your PR back into master
 - [ ] Include a README.md (contents described below)
@@ -39,8 +39,8 @@ Think about the design of your website. What will it look like? What pages will 
 Following the design, Create a controller for each of the pages listed above. You may “Add » Controller” on the controllers folder and scaffold out the basic CRUD operations if you wish.
 
 #### Home Page
-- [ ] Add some html and styling to your home page.
-- [ ] Link the index action of each of the other controllers within the Home page.
+- [x] Add some html and styling to your home page.
+- [x] Link the index action of each of the other controllers within the Home page.
 
 Throughout the week, we will slowly evolve this page to be more of a “dashboard” feel, but start the design now to start the process.
 
@@ -73,9 +73,9 @@ To gain full credit for this “feature”, your branch must consist of:
 - [x] View for home page that matches default routing
 
 #### Home Page
-- [ ] stylesheet present in web application
-- [ ] stylesheet referenced on home page.
-- [ ] Web application should build, compile, and redirect us to the home page upon launch. If you decided to scaffold the controllers, they should be accessible through their default actions.
+- [x] stylesheet present in web application
+- [x] stylesheet referenced on home page.
+- [x] Web application should build, compile, and redirect us to the home page upon launch. If you decided to scaffold the controllers, they should be accessible through their default actions.
 
 ### README
 A Readme is a requirement. No Readme == No Grade. 
