@@ -13,10 +13,20 @@ a {
     font-variant-caps: all-petite-caps;
     font-size: 1.75vw;
     color: white;
+    text-decoration: none;
 }
 
 a:hover {
-    color: #00abff;
+    background: -webkit-linear-gradient(#00abff, #006cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+}
+
+a.nav-s:hover {
+    border-left: 8px solid white;
+    border-radius: 8vw;
+    padding-left: 1vw;
 }
 
 .pad-top-s {
@@ -46,7 +56,9 @@ a:hover {
 .logo {
     font-family: 'Staatliches', Impact, Arial;
     font-size: 5vw;
-    color: #00abff;
+    background: -webkit-linear-gradient(#00abff, #006cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 ul.navigation {
