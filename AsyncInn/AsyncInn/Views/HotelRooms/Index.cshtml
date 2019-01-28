@@ -3,51 +3,70 @@
 @{
     ViewData["Title"] = "Index";
 }
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Async Inn Admin: </title>
+    <link href="~/Reset.css" rel="stylesheet" />
+    <link href="~/BaseStyles.css" rel="stylesheet" />
+</head>
+<body>
+    <h1 class="welcome">Welcome to the <span class="logo">ASYNC INN</span> Admin Page</h1>
+    <ul class="navigation">
+        <li><a href="~/">Home</a></li>
+        <li><a href="~/Hotels">Hotels</a></li>
+        <li><a href="~/Rooms">Rooms</a></li>
+        <li><a href="~/HotelRooms">Room Details</a></li>
+        <li><a href="~/RoomAmenities">Room Amenities</a></li>
+        <li><a href="~/Amenities">Update Amenities</a></li>
+    </ul>
 
-<h1>Index</h1>
+    <p class="pad-top-s">
+        <a asp-action="Create" class="CRUD">Create A New Hotel Room</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.RoomNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PetFriendly)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hotel)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RoomNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PetFriendly)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Hotel.Address)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.RoomNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Rate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PetFriendly)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Hotel)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.RoomNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PetFriendly)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hotel.Address)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+</body>
+</html>
