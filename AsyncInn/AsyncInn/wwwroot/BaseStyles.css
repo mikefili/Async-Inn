@@ -35,6 +35,10 @@ a:hover {
     padding-top: 15vw;
 }
 
+.center {
+    text-align: center;
+}
+
 .welcome {
     font-size: 3vw;
 }
