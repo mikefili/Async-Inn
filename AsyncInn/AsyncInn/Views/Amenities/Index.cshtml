@@ -1,0 +1,52 @@
+﻿@model IEnumerable<AsyncInn.Models.Amenities>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Async Inn Admin: </title>
+    <link href="~/Reset.css" rel="stylesheet" />
+    <link href="~/BaseStyles.css" rel="stylesheet" />
+</head>
+<body>
+    <h1 class="welcome">Welcome to the <span class="logo">ASYNC INN</span> Admin Page</h1>
+    <ul class="navigation">
+        <li><a href="~/">Home</a></li>
+        <li><a href="~/Hotels">Hotels</a></li>
+        <li><a href="~/Rooms">Rooms</a></li>
+        <li><a href="~/HotelRooms">Room Details</a></li>
+        <li><a href="~/RoomAmenities">Room Amenities</a></li>
+        <li><a href="~/Amenities">Update Amenities</a></li>
+    </ul>
+    <p class="pad-top-s">
+        <a asp-action="Create" class="CRUD">Create A New Amenity</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

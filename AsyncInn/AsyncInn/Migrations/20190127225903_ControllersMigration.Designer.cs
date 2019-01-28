@@ -4,14 +4,16 @@ using AsyncInn.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AsyncInn.Migrations
 {
     [DbContext(typeof(AsyncInnDbContext))]
-    partial class AsyncInnDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190127225903_ControllersMigration")]
+    partial class ControllersMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,8 +27,7 @@ namespace AsyncInn.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Name")
-                        .IsRequired();
+                    b.Property<string>("Name");
 
                     b.HasKey("ID");
 
@@ -39,14 +40,11 @@ namespace AsyncInn.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Address")
-                        .IsRequired();
+                    b.Property<string>("Address");
 
-                    b.Property<string>("Name")
-                        .IsRequired();
+                    b.Property<string>("Name");
 
-                    b.Property<string>("Phone")
-                        .IsRequired();
+                    b.Property<string>("Phone");
 
                     b.HasKey("ID");
 
@@ -59,7 +57,7 @@ namespace AsyncInn.Migrations
 
                     b.Property<decimal>("RoomID");
 
-                    b.Property<bool>("PetFriendly");
+                    b.Property<bool>("MyProperty");
 
                     b.Property<decimal>("Rate");
 
@@ -82,8 +80,7 @@ namespace AsyncInn.Migrations
 
                     b.Property<int>("Layout");
 
-                    b.Property<string>("Name")
-                        .IsRequired();
+                    b.Property<string>("Name");
 
                     b.HasKey("ID");
 

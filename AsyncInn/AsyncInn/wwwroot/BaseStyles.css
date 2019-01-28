@@ -1,0 +1,68 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Staatliches');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5vw;
+    text-align: center;
+    background-color: #252525;
+    color: white;
+}
+
+a {
+    font-variant-caps: all-petite-caps;
+    font-size: 1.75vw;
+    color: white;
+}
+
+a:hover {
+    color: #00abff;
+}
+
+.pad-top-s {
+    padding-top: 2.5vw;
+}
+
+.pad-top-m {
+    padding-top: 5vw;
+}
+
+.pad-top-l {
+    padding-top: 10vw;
+}
+
+.pad-top-xl {
+    padding-top: 15vw;
+}
+
+.center {
+    text-align: center;
+}
+
+.welcome {
+    font-size: 3vw;
+}
+
+.logo {
+    font-family: 'Staatliches', Impact, Arial;
+    font-size: 5vw;
+    color: #00abff;
+}
+
+ul.navigation {
+    padding-top: 1vw;
+}
+
+ul.navigation li {
+    display: inline;
+    padding-right: 2vw;
+}
+
+ul.navigation li:last-child {
+    padding-right: 0;
+}
+
+.CRUD {
+    font-variant-caps: all-petite-caps;
+    font-size: 4vw;
+}
