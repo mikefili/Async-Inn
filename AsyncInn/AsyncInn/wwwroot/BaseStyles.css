@@ -11,9 +11,25 @@ body {
 
 a {
     font-variant-caps: all-petite-caps;
-    font-size: 1.75vw;
+    font-size: 2vw;
     color: white;
     text-decoration: none;
+}
+
+.center {
+    margin: auto;
+}
+
+td {
+    padding: 0 2vw 0 2vw;
+}
+
+.table {
+    margin: auto;
+}
+
+th {
+    margin-right: 2vw;
 }
 
 a:hover {
@@ -24,8 +40,8 @@ a:hover {
 }
 
 a.nav-s:hover {
-    border-left: 8px solid white;
-    border-radius: 8vw;
+    border-left: 0.3rem solid white;
+    border-radius: 1rem;
     padding-left: 1vw;
 }
 
@@ -50,12 +66,12 @@ a.nav-s:hover {
 }
 
 .welcome {
-    font-size: 3vw;
+    font-size: 3.5vw;
 }
 
 .logo {
     font-family: 'Staatliches', Impact, Arial;
-    font-size: 5vw;
+    font-size: 7vw;
     background: -webkit-linear-gradient(#00abff, #006cff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -77,4 +93,5 @@ ul.navigation li:last-child {
 .CRUD {
     font-variant-caps: all-petite-caps;
     font-size: 4vw;
+    padding-bottom: 3vw;
 }

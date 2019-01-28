@@ -24,36 +24,38 @@
     <p class="pad-top-s">
         <a asp-action="Create" class="CRUD">Add Amenities To A Room</a>
     </p>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Amenities)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Room)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
+    <div class="center">
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Amenities.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Room.Name)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Amenities)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Room)
+                    </th>
+                    <th></th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Amenities.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Room.Name)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

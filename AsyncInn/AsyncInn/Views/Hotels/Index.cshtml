@@ -22,44 +22,45 @@
     </ul>
 
     <p class="pad-top-s">
-        <a asp-action="Create" class="CRUD">Create A New Hotel</a>
+        <a asp-action="Create" class="pad-top-s CRUD">Create A New Hotel</a>
     </p>
-    <table>
-        <thead>
-            <tr>
-                <th class="table pad-top-s">
-                    @Html.DisplayNameFor(model => model.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Address)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Phone)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
+    <div>
+        <table class="center">
+            <thead>
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Address)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Phone)
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-                    </td>
+                    <th class="table pad-top-s">
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Address)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Phone)
+                    </th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="pad-top-s">
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Address)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Phone)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+     </div>
 </body>
 </html>

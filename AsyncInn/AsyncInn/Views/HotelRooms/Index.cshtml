@@ -24,49 +24,50 @@
     <p class="pad-top-s">
         <a asp-action="Create" class="CRUD">Create A New Hotel Room</a>
     </p>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.RoomNumber)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Rate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.PetFriendly)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Hotel)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
+    <div class="center">
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.RoomNumber)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Rate)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.PetFriendly)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Hotel.Address)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.RoomNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Rate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PetFriendly)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Hotel)
+                    </th>
+                    <th></th>
                 </tr>
-            }
-        </tbody>
-    </table>
-
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RoomNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Rate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PetFriendly)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Hotel.Address)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
