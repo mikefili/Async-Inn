@@ -2,7 +2,7 @@
 
 namespace AsyncInn.Migrations
 {
-    public partial class ModelSetup : Migration
+    public partial class NewHRController : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
