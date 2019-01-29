@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AsyncInn.Data;
 using AsyncInn.Models;
+using AsyncInn.Models.Interfaces;
 
 namespace AsyncInn.Controllers
 {
