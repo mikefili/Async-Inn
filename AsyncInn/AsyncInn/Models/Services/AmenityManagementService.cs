@@ -32,7 +32,7 @@ namespace AsyncInn.Models.Services
 
         public async Task<IEnumerable<Amenities>> GetAmenities()
         {
-            throw new NotImplementedException();
+            return await _context.Amenities.ToListAsync();
         }
 
         public async Task<Amenities> GetAmenity(int id)

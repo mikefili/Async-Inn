@@ -35,9 +35,9 @@ namespace AsyncInn.Models.Services
             return await _context.Rooms.FirstOrDefaultAsync(room => room.ID == id);
         }
 
-        public Task<IEnumerable<Room>> GetRooms()
+        public async Task<IEnumerable<Room>> GetRooms()
         {
-            throw new NotImplementedException();
+            return await _context.Rooms.ToListAsync();
         }
 
         public void UpdateRoom(Room room)
