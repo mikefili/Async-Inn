@@ -8,5 +8,7 @@ namespace AsyncInn.Models.ViewModels
     public class RoomCreateViewModel
     {
         public Room Room { get; set; }
+        public Layout Layout { get; set; }
+        public string Name { get; set; }
     }
 }
