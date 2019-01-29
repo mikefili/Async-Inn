@@ -17,9 +17,10 @@ namespace AsyncInn.Models.Services
             _context = context;
         }
 
-        public Task CreateAmenity(Amenities amenities)
+        public async Task CreateAmenity(Amenities amenities)
         {
-            throw new NotImplementedException();
+            _context.Amenities.Add(amenities);
+            await _context.SaveChangesAsync();
         }
 
         public void DeleteAmenity(int id)

@@ -17,9 +17,10 @@ namespace AsyncInn.Models.Services
             _context = context;
         }
 
-        public Task CreateHotel(Hotel hotel)
+        public async Task CreateHotel(Hotel hotel)
         {
-            throw new NotImplementedException();
+            _context.Hotels.Add(hotel);
+            await _context.SaveChangesAsync();
         }
 
         public void DeleteHotel(int id)

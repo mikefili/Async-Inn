@@ -17,9 +17,10 @@ namespace AsyncInn.Models.Services
             _context = context;
         }
 
-        public Task CreateRoom(Room room)
+        public async Task CreateRoom(Room room)
         {
-            throw new NotImplementedException();
+            _context.Rooms.Add(room);
+            await _context.SaveChangesAsync();
         }
 
         public void DeleteRoom(int id)
