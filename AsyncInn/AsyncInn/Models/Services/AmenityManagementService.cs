@@ -25,7 +25,9 @@ namespace AsyncInn.Models.Services
 
         public void DeleteAmenity(int id)
         {
-            throw new NotImplementedException();
+            Amenities amenities = _context.Amenities.FirstOrDefault(a => a.ID == id);
+            _context.Amenities.Remove(amenities);
+            _context.SaveChanges();
         }
 
         public Task<IEnumerable<Amenities>> GetAmenities()

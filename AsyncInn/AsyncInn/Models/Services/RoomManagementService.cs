@@ -25,7 +25,9 @@ namespace AsyncInn.Models.Services
 
         public void DeleteRoom(int id)
         {
-            throw new NotImplementedException();
+            Room room = _context.Rooms.FirstOrDefault(r => r.ID == id);
+            _context.Rooms.Remove(room);
+            _context.SaveChanges();
         }
 
         public Task<Room> GetRoom(int id)

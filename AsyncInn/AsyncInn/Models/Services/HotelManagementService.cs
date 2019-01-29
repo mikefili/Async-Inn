@@ -25,7 +25,9 @@ namespace AsyncInn.Models.Services
 
         public void DeleteHotel(int id)
         {
-            throw new NotImplementedException();
+            Hotel hotel = _context.Hotels.FirstOrDefault(h => h.ID == id);
+            _context.Hotels.Remove(hotel);
+            _context.SaveChanges();
         }
 
         public Task<Hotel> GetHotel(int id)
