@@ -10,6 +10,13 @@ namespace AsyncInn.Models.Services
 {
     public class AmenityManagementService : IAmenityManager
     {
+        private AsyncInnDbContext _context { get; }
+
+        public AmenityManagementService(AsyncInnDbContext context)
+        {
+            _context = context;
+        }
+
         public Task CreateAmenity(Amenities amenities)
         {
             throw new NotImplementedException();

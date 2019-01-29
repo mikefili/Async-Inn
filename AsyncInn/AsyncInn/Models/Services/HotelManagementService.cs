@@ -10,6 +10,13 @@ namespace AsyncInn.Models.Services
 {
     public class HotelManagementService : IHotelManager
     {
+        private AsyncInnDbContext _context { get; }
+
+        public HotelManagementService(AsyncInnDbContext context)
+        {
+            _context = context;
+        }
+
         public Task CreateHotel(Hotel hotel)
         {
             throw new NotImplementedException();
