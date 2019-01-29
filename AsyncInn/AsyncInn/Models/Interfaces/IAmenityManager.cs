@@ -5,14 +5,18 @@ using System.Threading.Tasks;
 
 namespace AsyncInn.Models.Interfaces
 {
-    interface IAmenity
+    interface IAmenityManager
     {
         // Create an amenity
 
+
         // Read an amenity
 
+
         // Update an amenity
+
         
         // Delete an amenity
+
     }
 }

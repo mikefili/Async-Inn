@@ -5,14 +5,18 @@ using System.Threading.Tasks;
 
 namespace AsyncInn.Models.Interfaces
 {
-    interface IRoom
+    interface IRoomManager
     {
         // Create a room
 
+
         // Read a room
+
 
         // Update a room
 
+
         // Delete a room
+
     }
 }
