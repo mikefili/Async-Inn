@@ -35,7 +35,21 @@ a.nav-s:hover {
     border-bottom: 3px solid white;
 }
 
+.on-page {
+    background: -webkit-linear-gradient(#00abff, #006cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    font-size: 3vw;
+    border-bottom: 3px solid white;
+    display: inline-block;
+    transition: 0.3s ease;
+    background-position: 100% center;
+}
 
+.on-page:hover {
+    font-size: 2.5vw;
+}
 
 .center {
     margin: auto;

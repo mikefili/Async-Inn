@@ -3,7 +3,6 @@
 @{
     ViewData["Title"] = "Index";
 }
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,17 +11,15 @@
     <link href="~/BaseStyles.css" rel="stylesheet" />
 </head>
 <body>
-
     <h1 class="welcome">Welcome to the <span class="logo">ASYNC INN</span> Admin Page</h1>
     <ul class="navigation">
         <li><a href="~/" class="nav-s">Home</a></li>
         <li><a href="~/Hotels" class="nav-s">Hotels</a></li>
-        <li><a href="~/Rooms" class="nav-s">Rooms</a></li>
+        <li><a href="~/Rooms" class="on-page">Rooms</a></li>
         <li><a href="~/HotelRooms" class="nav-s">Room Details</a></li>
         <li><a href="~/RoomAmenities" class="nav-s">Room Amenities</a></li>
         <li><a href="~/Amenities" class="nav-s">Update Amenities</a></li>
     </ul>
-
     <p class="pad-top-s">
         <a asp-action="Create" class="CRUD">Create A New Room Type</a>
     </p>
