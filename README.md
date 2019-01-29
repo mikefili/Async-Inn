@@ -19,7 +19,71 @@ Welcome, Async Inn staff, to the your new Administrator Portal. Use this applica
 - CRUD Operations provide users the ability to modify and manage rooms, amenities, and new hotel locations as they are built.
 
 ## User Interface Demo
-![UI Demo](Assets/landing_page.png)
+
+### Home Page
+![UI Demo](Assets/landing_page.PNG)
+
+### Hotels Page
+Create, edit, view, and delete Async Inn locations across the country.
+![Hotels Page](Assets/hotel_page.PNG)
+
+#### Create
+![Create Hotel](Assets/hotel_page_create.PNG)
+
+#### Edit
+![Edit Hotel](Assets/hotel_page_edit.PNG)
+
+#### View
+![View Hotel](Assets/hotel_page_read.PNG)
+
+#### Delete
+![Delete Hotel](Assets/hotel_page_delete.PNG)
+
+### Rooms Page
+Create, edit, view, and delete rooms at any Async Inn location across the country.
+![Rooms Page](Assets/room_page.PNG)
+
+#### Create
+![Create Room](Assets/room_page_create.PNG)
+
+#### Edit
+![Edit Room](Assets/room_page_edit.PNG)
+
+#### View
+![View Room](Assets/room_page_read.PNG)
+
+#### Delete
+![Delete Room](Assets/room_page_delete.PNG)
+
+### Hotel Rooms Page
+Create, edit, view, and delete individual rooms at Async Inn locations across the country.
+![Hotel Rooms Page](Assets/hotelrooms_page.PNG)
+
+#### Create
+![Create Hotel Room](Assets/hotelrooms_page_create.PNG)
+
+### Room Amenities Page
+Assign amenities to individual rooms at Async Inn locations across the country.
+![Room Amenities Page](Assets/roomamenities_page.PNG)
+
+#### Create
+![Create Room Amenity](Assets/roomamenities_page_create.PNG)
+
+### Amenities Page
+Create, edit, view, and delete amenities available at any Async Inn location across the country.
+![Amenities Page](Assets/amenities_page.PNG)
+
+#### Create
+![Create Amenity](Assets/amenities_page_create.PNG)
+
+#### Edit
+![Edit Amenity](Assets/amenities_page_edit.PNG)
+
+#### View
+![View Amenity](Assets/amenities_page_read.PNG)
+
+#### Delete
+![Delete Amenity](Assets/amenities_page_delete.PNG)
 
 ## System Design
 ![DB Schema](Assets/SchemaAsyncInn.png)
