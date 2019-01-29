@@ -42,7 +42,7 @@ namespace AsyncInn.Models.Services
 
         public void UpdateHotel(Hotel hotel)
         {
-            throw new NotImplementedException();
+            _context.Hotels.Update(hotel);
         }
     }
 }

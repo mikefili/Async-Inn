@@ -17,9 +17,9 @@ namespace AsyncInn.Models.Services
             _context = context;
         }
 
-        public async Task CreateAmenity(Amenities amenities)
+        public async Task CreateAmenity(Amenities amenity)
         {
-            _context.Amenities.Add(amenities);
+            _context.Amenities.Add(amenity);
             await _context.SaveChangesAsync();
         }
 
@@ -40,9 +40,9 @@ namespace AsyncInn.Models.Services
             return await _context.Amenities.FirstOrDefaultAsync(amenities => amenities.ID == id);
         }
 
-        public void UpdateAmenity(Amenities amenities)
+        public void UpdateAmenity(Amenities amenity)
         {
-            throw new NotImplementedException();
+            _context.Amenities.Update(amenity);
         }
     }
 }
