@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace AsyncInn.Models.Interfaces
 {
-    interface IAmenityManager
+    interface IAmenityManager 
     {
         // Create an amenity
         Task CreateAmenity(Amenities amenities);
