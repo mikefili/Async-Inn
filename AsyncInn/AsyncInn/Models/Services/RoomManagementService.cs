@@ -30,9 +30,9 @@ namespace AsyncInn.Models.Services
             _context.SaveChanges();
         }
 
-        public Task<Room> GetRoom(int id)
+        public async Task<Room> GetRoom(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Rooms.FirstOrDefaultAsync(room => room.ID == id);
         }
 
         public Task<IEnumerable<Room>> GetRooms()

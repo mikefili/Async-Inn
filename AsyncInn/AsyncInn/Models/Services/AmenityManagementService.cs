@@ -30,14 +30,14 @@ namespace AsyncInn.Models.Services
             _context.SaveChanges();
         }
 
-        public Task<IEnumerable<Amenities>> GetAmenities()
+        public async Task<IEnumerable<Amenities>> GetAmenities()
         {
             throw new NotImplementedException();
         }
 
-        public Task<Amenities> GetAmenity(int id)
+        public async Task<Amenities> GetAmenity(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Amenities.FirstOrDefaultAsync(amenities => amenities.ID == id);
         }
 
         public void UpdateAmenity(Amenities amenities)
