@@ -7,5 +7,6 @@ namespace AsyncInn.Models.ViewModels
 {
     public class RoomCreateViewModel
     {
+        public Room Room { get; set; }
     }
 }

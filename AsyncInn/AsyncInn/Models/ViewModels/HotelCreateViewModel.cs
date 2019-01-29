@@ -7,5 +7,6 @@ namespace AsyncInn.Models.ViewModels
 {
     public class HotelCreateViewModel
     {
+        public Hotel Hotel { get; set; }
     }
 }
