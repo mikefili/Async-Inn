@@ -8,7 +8,6 @@ using Microsoft.EntityFrameworkCore;
 using AsyncInn.Data;
 using AsyncInn.Models;
 using AsyncInn.Models.Interfaces;
-using AsyncInn.Models.ViewModels;
 
 namespace AsyncInn.Controllers
 {
@@ -35,7 +34,6 @@ namespace AsyncInn.Controllers
             {
                 return NotFound();
             }
-
             return View(room);
         }
 
@@ -72,8 +70,13 @@ namespace AsyncInn.Controllers
         // POST: Rooms/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit([Bind("ID,Name,Layout")] Room room)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Layout")] Room room)
         {
+            if (id != room.ID)
+            {
+                return NotFound();
+            }
+
             if (ModelState.IsValid)
             {
                 try
@@ -93,7 +96,7 @@ namespace AsyncInn.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(room );
+            return View(room);
         }
 
         // GET: Rooms/Delete/5
@@ -119,11 +122,11 @@ namespace AsyncInn.Controllers
 
         private bool RoomExists(int id)
         {
-            if (_context.GetRooms() != null)
+            if (_context.GetRoom(id) != null)
             {
-                return true;
+                return false;
             }
-            return false;
+            return true;
         }
     }
 }
