@@ -59,9 +59,9 @@ namespace AsyncInn.Controllers
         }
 
         // GET: Rooms/Edit/5
-        public IActionResult Edit(int id)
+        public async Task<IActionResult> Edit(int id)
         {
-            var room = _context.GetRoom(id);
+            var room = await _context.GetRoom(id);
             if (room == null)
             {
                 return NotFound();
@@ -72,18 +72,17 @@ namespace AsyncInn.Controllers
         // POST: Rooms/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(RoomCreateViewModel room2)
+        public async Task<IActionResult> Edit([Bind("ID,Name,Layout")] Room room)
         {
-            Room newRoom = room2.Room;
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.UpdateRoom(newRoom);
+                    await _context.UpdateRoom(room);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!RoomExists(newRoom.ID))
+                    if (!RoomExists(room.ID))
                     {
                         return NotFound();
                     }
@@ -94,19 +93,17 @@ namespace AsyncInn.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(newRoom);
+            return View(room );
         }
 
         // GET: Rooms/Delete/5
         public async Task<IActionResult> Delete(int id)
         {
             var room = await _context.GetRoom(id);
-                await _context.DeleteRoom(id);
             if (room == null)
             {
                 return NotFound();
             }
-
             return View(room);
         }
 
