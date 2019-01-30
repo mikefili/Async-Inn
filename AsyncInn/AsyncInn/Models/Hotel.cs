@@ -14,12 +14,35 @@ namespace AsyncInn.Models
         [Display(Name = "Hotel Name ")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Please provide an address for the hotel")]
-        [Display(Name = "Hotel Address ")]
-        public string Address { get; set; }
+        [Required(ErrorMessage = "Please provide a street address")]
+        [Display(Name = "Street Address ")]
+        public string StreetAddress { get; set; }
+
+        [Required(ErrorMessage = "Please provide a city")]
+        [Display(Name = "City ")]
+        public string City { get; set; }
+
+        [Required(ErrorMessage = "Please provide a state")]
+        [StringLength(2)]
+        [Display(Name = "State ")]
+        public string State { get; set; }
+
+        [Required(ErrorMessage = "Please provide a zip code")]
+        [StringLength(5)]
+        [Display(Name = "5 Digit Zip Code ")]
+        public string ZipCode { get; set; }
+
+        [Display(Name = "Address ")]
+        public string FormattedAddress
+        {
+            get
+            {
+                return $"{StreetAddress}, {City}, {State.ToUpper()} {ZipCode}";
+            }
+        }
 
         [Required(ErrorMessage = "Please provide a phone number for the hotel")]
-        [Display(Name = "Hotel Phone Number ")]
+        [Display(Name = "Phone Number ")]
         [Phone]
         public string Phone { get; set; }
 

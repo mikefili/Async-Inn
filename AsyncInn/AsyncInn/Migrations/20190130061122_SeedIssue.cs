@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AsyncInn.Migrations
 {
-    public partial class DBFix : Migration
+    public partial class SeedIssue : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -27,7 +27,10 @@ namespace AsyncInn.Migrations
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: false),
-                    Address = table.Column<string>(nullable: false),
+                    StreetAddress = table.Column<string>(nullable: false),
+                    City = table.Column<string>(nullable: false),
+                    State = table.Column<string>(maxLength: 2, nullable: false),
+                    ZipCode = table.Column<string>(maxLength: 5, nullable: false),
                     Phone = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
@@ -98,6 +101,43 @@ namespace AsyncInn.Migrations
                         principalTable: "Rooms",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Amenities",
+                columns: new[] { "ID", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Air Conditioning" },
+                    { 2, "Kitchenette" },
+                    { 3, "Jacuzzi Tub" },
+                    { 4, "Balcony" },
+                    { 5, "Office" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Hotels",
+                columns: new[] { "ID", "City", "Name", "Phone", "State", "StreetAddress", "ZipCode" },
+                values: new object[,]
+                {
+                    { 1, "Seattle", "Downtown Seattle", "12065551234", "WA", "123 1st Ave S", "98101" },
+                    { 2, "Seattle", "Ballard", "12065551234", "WA", "1 Main St", "98107" },
+                    { 3, "Renton", "Downtown Renton", "12065551234", "WA", "1234 Rainier Ave S", "98057" },
+                    { 4, "Bellevue", "Bellevue Square", "12065551234", "WA", "1 Bellevue Square", "98004" },
+                    { 5, "Everett", "Everett", "12065551234", "WA", "3 Everett Way", "98206" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Rooms",
+                columns: new[] { "ID", "Layout", "Name" },
+                values: new object[,]
+                {
+                    { 1, 0, "Standard Studio" },
+                    { 2, 1, "Standard One Bedroom" },
+                    { 3, 2, "Standard Two Bedroom" },
+                    { 4, 0, "Pet Friendly Studio" },
+                    { 5, 1, "Pet Friendly One Bedroom" },
+                    { 6, 2, "Pet Friendly Two Bedroom" }
                 });
 
             migrationBuilder.CreateIndex(
