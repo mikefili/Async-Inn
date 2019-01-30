@@ -73,7 +73,7 @@ namespace AsyncInn.Controllers
         }
 
         // GET: HotelRooms/Edit/5
-        public async Task<IActionResult> Edit(int hotelID, int roomID)
+        public async Task<IActionResult> Edit(int? hotelID, int? roomID)
         {
             if (hotelID == null || roomID == null)
             {
@@ -128,7 +128,7 @@ namespace AsyncInn.Controllers
         }
 
         // GET: HotelRooms/Delete/5
-        public async Task<IActionResult> Delete(int hotelID, int roomID)
+        public async Task<IActionResult> Delete(int? hotelID, int? roomID)
         {
             if (hotelID == null || roomID == null)
             {

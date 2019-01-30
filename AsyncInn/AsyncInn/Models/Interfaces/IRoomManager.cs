@@ -5,20 +5,20 @@ using System.Threading.Tasks;
 
 namespace AsyncInn.Models.Interfaces
 {
-    interface IRoomManager
+    public interface IRoomManager
     {
         // Create a room
         Task CreateRoom(Room room);
 
         // Read a room
-        Task<Room> GetRoom(int id);
+        Task<Room> GetRoom(int? id);
 
         Task<IEnumerable<Room>> GetRooms();
 
         // Update a room
-        void UpdateRoom(Room room);
+        Task UpdateRoom(Room room);
 
         // Delete a room
-        void DeleteRoom(int id);
+        Task DeleteRoom(int? id);
     }
 }

@@ -27,9 +27,9 @@ namespace AsyncInn.Controllers
         }
 
         // GET: RoomAmenities/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int? amenityID, int? roomID)
         {
-            if (id == null)
+            if (amenityID == null || roomID == null)
             {
                 return NotFound();
             }
@@ -37,7 +37,7 @@ namespace AsyncInn.Controllers
             var roomAmenities = await _context.RoomAmenities
                 .Include(r => r.Amenities)
                 .Include(r => r.Room)
-                .FirstOrDefaultAsync(m => m.AmenitiesID == id);
+                .FirstOrDefaultAsync(m => m.AmenitiesID == amenityID && m.RoomID == roomID);
             if (roomAmenities == null)
             {
                 return NotFound();
@@ -73,14 +73,14 @@ namespace AsyncInn.Controllers
         }
 
         // GET: RoomAmenities/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int? amenityID, int? roomID)
         {
-            if (id == null)
+            if (amenityID == null || roomID == null)
             {
                 return NotFound();
             }
 
-            var roomAmenities = await _context.RoomAmenities.FindAsync(id);
+            var roomAmenities = await _context.RoomAmenities.FirstOrDefaultAsync(m => m.AmenitiesID == amenityID && m.RoomID == roomID);
             if (roomAmenities == null)
             {
                 return NotFound();
@@ -128,9 +128,9 @@ namespace AsyncInn.Controllers
         }
 
         // GET: RoomAmenities/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? amenityID, int? roomID)
         {
-            if (id == null)
+            if (amenityID == null || roomID == null)
             {
                 return NotFound();
             }
@@ -138,7 +138,7 @@ namespace AsyncInn.Controllers
             var roomAmenities = await _context.RoomAmenities
                 .Include(r => r.Amenities)
                 .Include(r => r.Room)
-                .FirstOrDefaultAsync(m => m.AmenitiesID == id);
+                .FirstOrDefaultAsync(m => m.AmenitiesID == amenityID && m.RoomID == roomID);
             if (roomAmenities == null)
             {
                 return NotFound();
