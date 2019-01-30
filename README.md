@@ -68,7 +68,7 @@ Create, edit, view, and delete individual rooms at Async Inn locations across th
 
 ### Room Amenities Page
 View assigned amenities.
-![Room Amenities Page](Assets/roomamenities_page.png)
+![Room Amenities Page](Assets/roomamenities_page.PNG)
 
 #### Create A Room Amenity
 Assign amenities to individual rooms at Async Inn locations across the country.
