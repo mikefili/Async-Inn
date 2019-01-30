@@ -79,7 +79,8 @@ namespace AsyncInn.Data
                     ID = 1,
                     Name = "Standard Studio",
                     Layout = Layout.Studio
-                }, new Room
+                }, 
+                new Room
                 {
                     ID = 2,
                     Name = "Standard One Bedroom",

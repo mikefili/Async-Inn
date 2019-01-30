@@ -28,13 +28,8 @@ namespace AsyncInn.Controllers
         }
 
         // GET: Rooms/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
             var room = await _context.GetRoom(id);
             if (room == null)
             {
@@ -55,26 +50,20 @@ namespace AsyncInn.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(RoomCreateViewModel room2)
+        public IActionResult Create(Room room)
         {
-            Room newRoom = room2.Room;
             if (ModelState.IsValid)
             {
-                await _context.CreateRoom(newRoom);
+                _context.CreateRoom(room);
                 return RedirectToAction(nameof(Index));
             }
-            return View(newRoom);
+            return View(room);
         }
 
         // GET: Rooms/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public IActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var room = await _context.GetRoom(id);
+            var room = _context.GetRoom(id);
             if (room == null)
             {
                 return NotFound();
@@ -113,13 +102,8 @@ namespace AsyncInn.Controllers
         }
 
         // GET: Rooms/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
             var room = await _context.GetRoom(id);
                 await _context.DeleteRoom(id);
             if (room == null)

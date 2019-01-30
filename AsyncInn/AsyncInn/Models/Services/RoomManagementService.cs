@@ -23,14 +23,14 @@ namespace AsyncInn.Models.Services
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteRoom(int? id)
+        public async Task DeleteRoom(int id)
         {
             Room room = _context.Rooms.FirstOrDefault(r => r.ID == id);
             _context.Rooms.Remove(room);
             await _context.SaveChangesAsync();
         }
 
-        public async Task<Room> GetRoom(int? id)
+        public async Task<Room> GetRoom(int id)
         {
             return await _context.Rooms.FirstOrDefaultAsync(room => room.ID == id);
         }
