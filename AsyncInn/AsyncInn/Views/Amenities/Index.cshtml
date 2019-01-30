@@ -27,7 +27,7 @@
         <table class="center">
             <thead>
                 <tr>
-                    <th>
+                    <th class="pad-top-s emphasize-caps">
                         @Html.DisplayNameFor(model => model.Name)
                     </th>
                     <th></th>
@@ -37,7 +37,7 @@
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td>
+                        <td class="pad-top-s">
                             @Html.DisplayFor(modelItem => item.Name)
                         </td>
                         <td>

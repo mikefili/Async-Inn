@@ -35,6 +35,14 @@ a.nav-s:hover {
     border-bottom: 3px solid white;
 }
 
+.emphasize-caps {
+    font-variant-caps: all-petite-caps;
+    font-size: 3vw;
+    background: -webkit-linear-gradient(#00abff, #006cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .on-page {
     background: -webkit-linear-gradient(#00abff, #006cff);
     -webkit-background-clip: text;
