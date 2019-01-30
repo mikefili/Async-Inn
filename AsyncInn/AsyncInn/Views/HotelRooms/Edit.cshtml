@@ -24,29 +24,29 @@
     <h2 class="pad-top-s CRUD">Edit Existing Hotel Room</h2>
 
     <hr />
-    <div class="row">
-        <div class="col-md-4">
+    <div class="center">
+        <div class="center">
             <form asp-action="Edit">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div asp-validation-summary="ModelOnly" class=""></div>
                 <input type="hidden" asp-for="HotelID" />
                 <input type="hidden" asp-for="RoomID" />
-                <div class="form-group">
-                    <label asp-for="RoomNumber" class="control-label"></label>
-                    <input asp-for="RoomNumber" class="form-control" />
-                    <span asp-validation-for="RoomNumber" class="text-danger"></span>
+                <div class="">
+                    <label asp-for="RoomNumber" class=""></label>
+                    <input asp-for="RoomNumber" class="" />
+                    <span asp-validation-for="RoomNumber" class=""></span>
                 </div>
-                <div class="form-group">
-                    <label asp-for="Rate" class="control-label"></label>
-                    <input asp-for="Rate" class="form-control" />
-                    <span asp-validation-for="Rate" class="text-danger"></span>
+                <div class="">
+                    <label asp-for="Rate" class=""></label>
+                    <input asp-for="Rate" class="" />
+                    <span asp-validation-for="Rate" class=""></span>
                 </div>
-                <div class="form-group form-check">
-                    <label class="form-check-label">
-                        <input class="form-check-input" asp-for="PetFriendly" /> @Html.DisplayNameFor(model => model.PetFriendly)
+                <div class="">
+                    <label class="">
+                        <input class="" asp-for="PetFriendly" /> @Html.DisplayNameFor(model => model.PetFriendly)
                     </label>
                 </div>
-                <div class="form-group">
-                    <input type="submit" value="Save" class="btn btn-primary" />
+                <div class="">
+                    <input type="submit" value="Save" class="" />
                 </div>
             </form>
         </div>
