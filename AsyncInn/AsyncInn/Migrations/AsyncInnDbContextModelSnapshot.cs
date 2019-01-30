@@ -30,6 +30,33 @@ namespace AsyncInn.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Amenities");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Name = "Air Conditioning"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            Name = "Kitchenette"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            Name = "Jacuzzi Tub"
+                        },
+                        new
+                        {
+                            ID = 4,
+                            Name = "Balcony"
+                        },
+                        new
+                        {
+                            ID = 5,
+                            Name = "Office"
+                        });
                 });
 
             modelBuilder.Entity("AsyncInn.Models.Hotel", b =>
@@ -56,11 +83,63 @@ namespace AsyncInn.Migrations
 
                     b.Property<string>("ZipCode")
                         .IsRequired()
-                        .HasMaxLength(2);
+                        .HasMaxLength(5);
 
                     b.HasKey("ID");
 
                     b.ToTable("Hotels");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            City = "Seattle",
+                            Name = "Downtown Seattle",
+                            Phone = "12065551234",
+                            State = "WA",
+                            StreetAddress = "123 1st Ave S",
+                            ZipCode = "98101"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            City = "Seattle",
+                            Name = "Ballard",
+                            Phone = "12065551234",
+                            State = "WA",
+                            StreetAddress = "1 Main St",
+                            ZipCode = "98107"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            City = "Renton",
+                            Name = "Downtown Renton",
+                            Phone = "12065551234",
+                            State = "WA",
+                            StreetAddress = "1234 Rainier Ave S",
+                            ZipCode = "98057"
+                        },
+                        new
+                        {
+                            ID = 4,
+                            City = "Bellevue",
+                            Name = "Bellevue Square",
+                            Phone = "12065551234",
+                            State = "WA",
+                            StreetAddress = "1 Bellevue Square",
+                            ZipCode = "98004"
+                        },
+                        new
+                        {
+                            ID = 5,
+                            City = "Everett",
+                            Name = "Everett",
+                            Phone = "12065551234",
+                            State = "WA",
+                            StreetAddress = "3 Everett Way",
+                            ZipCode = "98206"
+                        });
                 });
 
             modelBuilder.Entity("AsyncInn.Models.HotelRoom", b =>
@@ -96,6 +175,44 @@ namespace AsyncInn.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Rooms");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Layout = 0,
+                            Name = "Standard Studio"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            Layout = 1,
+                            Name = "Standard One Bedroom"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            Layout = 2,
+                            Name = "Standard Two Bedroom"
+                        },
+                        new
+                        {
+                            ID = 4,
+                            Layout = 0,
+                            Name = "Pet Friendly Studio"
+                        },
+                        new
+                        {
+                            ID = 5,
+                            Layout = 1,
+                            Name = "Pet Friendly One Bedroom"
+                        },
+                        new
+                        {
+                            ID = 6,
+                            Layout = 2,
+                            Name = "Pet Friendly Two Bedroom"
+                        });
                 });
 
             modelBuilder.Entity("AsyncInn.Models.RoomAmenities", b =>

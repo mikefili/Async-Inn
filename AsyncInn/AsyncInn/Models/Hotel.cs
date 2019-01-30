@@ -28,10 +28,11 @@ namespace AsyncInn.Models
         public string State { get; set; }
 
         [Required(ErrorMessage = "Please provide a zip code")]
-        [StringLength(2)]
-        [Display(Name = "Zip Code ")]
+        [StringLength(5)]
+        [Display(Name = "5 Digit Zip Code ")]
         public string ZipCode { get; set; }
 
+        [Display(Name = "Address ")]
         public string FormattedAddress
         {
             get
@@ -41,7 +42,7 @@ namespace AsyncInn.Models
         }
 
         [Required(ErrorMessage = "Please provide a phone number for the hotel")]
-        [Display(Name = "Hotel Phone Number ")]
+        [Display(Name = "Phone Number ")]
         [Phone]
         public string Phone { get; set; }
 
