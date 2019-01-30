@@ -16,9 +16,9 @@ namespace AsyncInn.Models.Interfaces
         Task<IEnumerable<Amenities>> GetAmenities();
 
         // Update an amenity
-        void UpdateAmenity(Amenities amenities);
+        Task UpdateAmenity(Amenities amenities);
 
         // Delete an amenity
-        void DeleteAmenity(int id);
+        Task DeleteAmenity(int id);
     }
 }
