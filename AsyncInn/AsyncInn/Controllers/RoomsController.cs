@@ -21,9 +21,14 @@ namespace AsyncInn.Controllers
         }
 
         // GET: Rooms
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.GetRooms());
+            var rooms = await _context.GetRooms();
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                rooms = rooms.Where(s => s.Name.Contains(searchString));
+            }
+            return View(rooms);
         }
 
         // GET: Rooms/Details/5

@@ -17,25 +17,25 @@
         <li><a href="~/Hotels" class="nav-s">Hotels</a></li>
         <li><a href="~/Rooms" class="nav-s">Rooms</a></li>
         <li><a href="~/HotelRooms" class="nav-s">Room Details</a></li>
-        <li><a href="~/RoomAmenities" class="on-page">Room Amenities</a></li>
-        <li><a href="~/Amenities" class="nav-s">Update Amenities</a></li>
+        <li><a href="~/RoomAmenities" class="on-page">Update Amenities</a></li>
+        <li><a href="~/Amenities" class="nav-s">Amenities</a></li>
     </ul>
 
     <h2 class="pad-top-s CRUD">View Amenity Details</h2>
     <div>
         <h4>RoomAmenities</h4>
         <hr />
-        <dl class="row">
-            <dt class="col-sm-2">
+        <dl class="center">
+            <dt class="">
                 @Html.DisplayNameFor(model => model.Amenities)
             </dt>
-            <dd class="col-sm-10">
+            <dd class="">
                 @Html.DisplayFor(model => model.Amenities.Name)
             </dd>
-            <dt class="col-sm-2">
+            <dt class="">
                 @Html.DisplayNameFor(model => model.Room)
             </dt>
-            <dd class="col-sm-10">
+            <dd class="">
                 @Html.DisplayFor(model => model.Room.Name)
             </dd>
         </dl>

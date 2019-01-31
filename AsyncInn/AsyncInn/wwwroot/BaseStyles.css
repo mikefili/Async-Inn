@@ -7,6 +7,8 @@ body {
     text-align: center;
     background-color: #252525;
     color: white;
+    min-width: 680px;
+    box-sizing: border-box;
 }
 
 a {
@@ -33,6 +35,53 @@ a.nav-s {
 a.nav-s:hover {
     font-size: 3vw;
     border-bottom: 3px solid white;
+}
+
+.container-s {
+    min-width: 10vw;
+    max-width: 20vw;
+}
+
+.container-m {
+    min-width: 20vw;
+    max-width: 30vw;
+}
+
+.container-l {
+    min-width: 50vw;
+    max-width: 60vw;
+}
+
+.input {
+    margin: 1vw;
+    padding: 1vw 2vw 0vw 2vw;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5vw;
+    text-align: center;
+}
+
+.search {
+    font-size: 2vw;
+}
+
+.button {
+    margin: 1vw;
+    padding: 0.5vw 1vw 0 1vw;
+    border: 1px solid white;
+    border-radius: 0.5vw;
+    background-image: linear-gradient(#00abff, #006cff);
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5vw;
+    text-align: center;
+}
+
+.emphasize-caps {
+    font-variant-caps: all-petite-caps;
+    font-size: 3vw;
+    background: -webkit-linear-gradient(#00abff, #006cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .on-page {
@@ -63,8 +112,12 @@ td {
     margin: auto;
 }
 
-th {
+/*th {
     margin-right: 2vw;
+}*/
+
+.pad-top-xs {
+    padding-top: 1vw;
 }
 
 .pad-top-s {
@@ -89,6 +142,22 @@ th {
 
 .welcome {
     font-size: 3.5vw;
+}
+
+table.grey {
+    border-collapse: separate;
+    margin-bottom: 5vw;
+}
+
+.grey {
+    background-color: #373737;
+    min-width: 50vw;
+    height: 10vw;
+    margin: auto;
+    margin-top: 3vw;
+    border: 1px solid grey;
+    border-radius: 0.5vw;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 .logo {
@@ -119,15 +188,35 @@ ul.navigation li:last-child {
 }
 
 /*@media (max-width: 680px) {
+    .welcome {
+        font-size: 4vw;
+        padding-bottom: 3vw;
+    }
+
+    .logo {
+        font-family: 'Staatliches', Impact, Arial;
+        font-size: 10vw;
+        background: -webkit-linear-gradient(#00abff, #006cff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
     ul.navigation li {
         display: block;
     }
 
     a.nav-s {
         display: block;
+        font-size: 6vw;
+        padding-bottom: 2vw;
     }
 
     .navigation {
         display: block;
+    }
+
+    a.nav-s:hover {
+        font-size: 8vw;
+        border-bottom: none;
     }
 }*/

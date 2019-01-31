@@ -30,9 +30,9 @@ namespace AsyncInn
         {
             services.AddMvc();
             services.AddDbContext<AsyncInnDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddTransient<IHotelManager, HotelManagementService>();
-            services.AddTransient<IRoomManager, RoomManagementService>();
-            services.AddTransient<IAmenityManager, AmenityManagementService>();
+            services.AddScoped<IHotelManager, HotelManagementService>();
+            services.AddScoped<IRoomManager, RoomManagementService>();
+            services.AddScoped<IAmenityManager, AmenityManagementService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

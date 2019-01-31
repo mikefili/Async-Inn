@@ -17,26 +17,38 @@
         <li><a href="~/Hotels" class="on-page">Hotels</a></li>
         <li><a href="~/Rooms" class="nav-s">Rooms</a></li>
         <li><a href="~/HotelRooms" class="nav-s">Room Details</a></li>
-        <li><a href="~/RoomAmenities" class="nav-s">Room Amenities</a></li>
-        <li><a href="~/Amenities" class="nav-s">Update Amenities</a></li>
+        <li><a href="~/RoomAmenities" class="nav-s">Update Amenities</a></li>
+        <li><a href="~/Amenities" class="nav-s">Amenities</a></li>
     </ul>
+
+    <div class="pad-top-s">
+        <form method="post" class="pad-top-xs">
+            <label name="searchString" class="search">Search For A Hotel</label>
+            <br />
+            <input name="searchString" class="input" />
+            <button type="submit" class="button">SEARCH</button>
+            <p>Current Hotel Count: @Model.ToList().Count</p>
+            <p><a href="~/Hotels">CLEAR SEARCH</a></p>
+        </form>
+    </div>
 
     <p class="pad-top-s">
         <a asp-action="Create" class="pad-top-s CRUD">Create A New Hotel</a>
     </p>
-    <div>
-        <table class="center">
+    <div class="center">
+        <table class="center grey">
             <thead>
                 <tr>
-                    <th class="table pad-top-s">
+                    <th class="pad-top-s emphasize-caps">
                         @Html.DisplayNameFor(model => model.Name)
                     </th>
-                    <th>
+                    <th class="emphasize-caps">
                         @Html.DisplayNameFor(model => model.FormattedAddress)
                     </th>
-                    <th>
+                    <th class="emphasize-caps">
                         @Html.DisplayNameFor(model => model.Phone)
                     </th>
+                    <th class="emphasize-caps">Update</th>
                 </tr>
             </thead>
             <tbody>
@@ -58,8 +70,12 @@
                             <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
                         </td>
                     </tr>
+                    <tr class="pad-top-s"></tr>
                 }
             </tbody>
+            <tr>
+                <td class="pad-top-s"></td>
+            </tr>
         </table>
      </div>
 </body>

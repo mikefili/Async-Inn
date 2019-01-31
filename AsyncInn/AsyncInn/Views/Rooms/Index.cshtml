@@ -17,30 +17,42 @@
         <li><a href="~/Hotels" class="nav-s">Hotels</a></li>
         <li><a href="~/Rooms" class="on-page">Rooms</a></li>
         <li><a href="~/HotelRooms" class="nav-s">Room Details</a></li>
-        <li><a href="~/RoomAmenities" class="nav-s">Room Amenities</a></li>
-        <li><a href="~/Amenities" class="nav-s">Update Amenities</a></li>
+        <li><a href="~/RoomAmenities" class="nav-s">Update Amenities</a></li>
+        <li><a href="~/Amenities" class="nav-s">Amenities</a></li>
     </ul>
+
+    <div class="pad-top-s">
+        <form method="post" class="pad-top-xs">
+            <label name="searchString" class="search">Search For A Room</label>
+            <br />
+            <input name="searchString" class="input" />
+            <button type="submit" class="button">SEARCH</button>
+            <p>Current Room Count: @Model.ToList().Count</p>
+            <p><a href="~/Rooms">CLEAR SEARCH</a></p>
+        </form>
+    </div>
+
     <p class="pad-top-s">
         <a asp-action="Create" class="CRUD">Create A New Room Type</a>
     </p>
     <div class="center">
-        <table class="table">
+        <table class="center grey">
             <thead>
                 <tr>
-                    <th>
+                    <th class="pad-top-s emphasize-caps">
                         @Html.DisplayNameFor(model => model.Name)
                     </th>
-                    <th>
+                    <th class="emphasize-caps">
                         @Html.DisplayNameFor(model => model.Layout)
                     </th>
-                    <th></th>
+                    <th class="emphasize-caps">Update</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td>
+                        <td class="pad-top-s">
                             @Html.DisplayFor(modelItem => item.Name)
                         </td>
                         <td>
@@ -52,8 +64,12 @@
                             <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
                         </td>
                     </tr>
+                    <tr class="pad-top-s"></tr>
                 }
             </tbody>
+            <tr>
+                <td class="pad-top-s"></td>
+            </tr>
         </table>
     </div>
 </body>

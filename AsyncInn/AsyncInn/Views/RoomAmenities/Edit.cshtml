@@ -17,8 +17,8 @@
         <li><a href="~/Hotels" class="nav-s">Hotels</a></li>
         <li><a href="~/Rooms" class="nav-s">Rooms</a></li>
         <li><a href="~/HotelRooms" class="nav-s">Room Details</a></li>
-        <li><a href="~/RoomAmenities" class="on-page">Room Amenities</a></li>
-        <li><a href="~/Amenities" class="nav-s">Update Amenities</a></li>
+        <li><a href="~/RoomAmenities" class="on-page">Update Amenities</a></li>
+        <li><a href="~/Amenities" class="nav-s">Amenities</a></li>
     </ul>
 
     <h2 class="pad-top-s CRUD">Edit Room Amenities</h2>
@@ -26,14 +26,14 @@
 </html>
 
 <hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="center">
+    <div class="center">
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="ModelOnly" class=""></div>
             <input type="hidden" asp-for="AmenitiesID" />
             <input type="hidden" asp-for="RoomID" />
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div class="">
+                <input type="submit" value="Save" class="" />
             </div>
         </form>
     </div>

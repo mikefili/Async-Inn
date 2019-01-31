@@ -17,26 +17,26 @@
         <li><a href="~/Hotels" class="nav-s">Hotels</a></li>
         <li><a href="~/Rooms" class="nav-s">Rooms</a></li>
         <li><a href="~/HotelRooms" class="nav-s">Room Details</a></li>
-        <li><a href="~/RoomAmenities" class="on-page">Room Amenities</a></li>
-        <li><a href="~/Amenities" class="nav-s">Update Amenities</a></li>
+        <li><a href="~/RoomAmenities" class="on-page">Update Amenities</a></li>
+        <li><a href="~/Amenities" class="nav-s">Amenities</a></li>
     </ul>
 
     <h2 class="pad-top-s CRUD">Add A New Amenity</h2>
     <hr />
-    <div class="row">
-        <div class="col-md-4">
+    <div class="center">
+        <div class="center">
             <form asp-action="Create">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="AmenitiesID" class="control-label"></label>
-                    <select asp-for="AmenitiesID" class="form-control" asp-items="ViewBag.AmenitiesID"></select>
+                <div asp-validation-summary="ModelOnly" class=""></div>
+                <div class="">
+                    <label asp-for="AmenitiesID" class=""></label>
+                    <select asp-for="AmenitiesID" class="" asp-items="ViewBag.AmenitiesID"></select>
                 </div>
                 <div class="form-group">
-                    <label asp-for="RoomID" class="control-label"></label>
-                    <select asp-for="RoomID" class="form-control" asp-items="ViewBag.RoomID"></select>
+                    <label asp-for="RoomID" class=""></label>
+                    <select asp-for="RoomID" class="" asp-items="ViewBag.RoomID"></select>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary" />
+                    <input type="submit" value="Create" class="" />
                 </div>
             </form>
         </div>
