@@ -20,35 +20,24 @@
         <li><a href="~/RoomAmenities" class="nav-s">Update Amenities</a></li>
         <li><a href="~/Amenities" class="on-page">Amenities</a></li>
     </ul>
-
     <h2 class="pad-top-s CRUD">Edit Amenities</h2>
-
-    <h4>Amenities</h4>
-    <hr />
     <div class="center">
         <div class="center">
             <form asp-action="Edit">
                 <div asp-validation-summary="ModelOnly" class=""></div>
                 <input type="hidden" asp-for="ID" />
-                <div class="">
+                <div class="grey container-m">
                     <label asp-for="Name" class=""></label>
-                    <input asp-for="Name" class="" />
+                    <input asp-for="Name" class="input" />
                     <span asp-validation-for="Name" class=""></span>
-                </div>
-                <div class="">
-                    <input type="submit" value="Save" class="" />
+                    <p><input type="submit" value="Save" class="button" /></p>
+                    <a asp-action="Index">Back to List</a>
                 </div>
             </form>
         </div>
     </div>
-
-    <div>
-        <a asp-action="Index">Back to List</a>
-    </div>
-
     @section Scripts {
         @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     }
-
 </body>
 </html>
