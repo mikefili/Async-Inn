@@ -26,7 +26,8 @@ namespace AsyncInn.Controllers
             var hotels = await _context.GetHotels();
             if (!String.IsNullOrEmpty(searchString))
             {
-                hotels = hotels.Where(s => s.Name.Contains(searchString));
+                hotels = hotels.Where(s => s.Name.Contains(searchString) || s.FormattedAddress.Contains(searchString));
+                                
             }
             return View(hotels);
         }
