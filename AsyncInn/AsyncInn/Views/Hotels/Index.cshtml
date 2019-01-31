@@ -21,6 +21,17 @@
         <li><a href="~/Amenities" class="nav-s">Update Amenities</a></li>
     </ul>
 
+    <div class="pad-top-s">
+        <form method="post">
+            <label name="searchString" class="search">Search For A Hotel</label>
+            <br />
+            <input name="searchString" class="input" />
+            <button name="searchString" type="submit" class="button">SEARCH</button>
+            <br />
+            <a href="~/Hotels">CLEAR SEARCH</a>
+        </form>
+    </div>
+
     <p class="pad-top-s">
         <a asp-action="Create" class="pad-top-s CRUD">Create A New Hotel</a>
     </p>
