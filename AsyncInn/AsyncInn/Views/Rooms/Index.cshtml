@@ -17,9 +17,21 @@
         <li><a href="~/Hotels" class="nav-s">Hotels</a></li>
         <li><a href="~/Rooms" class="on-page">Rooms</a></li>
         <li><a href="~/HotelRooms" class="nav-s">Room Details</a></li>
-        <li><a href="~/RoomAmenities" class="nav-s">Room Amenities</a></li>
-        <li><a href="~/Amenities" class="nav-s">Update Amenities</a></li>
+        <li><a href="~/RoomAmenities" class="nav-s">Update Amenities</a></li>
+        <li><a href="~/Amenities" class="nav-s">Amenities</a></li>
     </ul>
+
+    <div class="pad-top-s">
+        <form method="post">
+            <label name="searchString" class="search">Search For A Room</label>
+            <br />
+            <input name="searchString" class="input" />
+            <button name="searchString" type="submit" class="button">SEARCH</button>
+            <br />
+            <a href="~/Rooms">CLEAR SEARCH</a>
+        </form>
+    </div>
+
     <p class="pad-top-s">
         <a asp-action="Create" class="CRUD">Create A New Room Type</a>
     </p>
