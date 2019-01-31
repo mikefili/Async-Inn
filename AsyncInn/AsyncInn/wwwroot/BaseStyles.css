@@ -71,9 +71,9 @@ td {
     margin: auto;
 }
 
-th {
+/*th {
     margin-right: 2vw;
-}
+}*/
 
 .pad-top-s {
     padding-top: 2.5vw;
@@ -97,6 +97,17 @@ th {
 
 .welcome {
     font-size: 3.5vw;
+}
+
+.grey {
+    background-color: #373737;
+    width: 60vw;
+    height: 10vw;
+    margin: auto;
+    margin-top: 3vw;
+    border: 1px solid grey;
+    border-radius: 0.5vw;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 .logo {
@@ -126,16 +137,36 @@ ul.navigation li:last-child {
     padding-bottom: 3vw;
 }
 
-/*@media (max-width: 680px) {
+@media (max-width: 680px) {
+    .welcome {
+        font-size: 4vw;
+        padding-bottom: 3vw;
+    }
+
+    .logo {
+        font-family: 'Staatliches', Impact, Arial;
+        font-size: 10vw;
+        background: -webkit-linear-gradient(#00abff, #006cff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
     ul.navigation li {
         display: block;
     }
 
     a.nav-s {
         display: block;
+        font-size: 6vw;
+        padding-bottom: 2vw;
     }
 
     .navigation {
         display: block;
     }
-}*/
+
+    a.nav-s:hover {
+        font-size: 8vw;
+        border-bottom: none;
+    }
+}
