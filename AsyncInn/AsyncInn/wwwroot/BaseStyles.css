@@ -8,6 +8,7 @@ body {
     background-color: #252525;
     color: white;
     min-width: 680px;
+    box-sizing: border-box;
 }
 
 a {
@@ -97,6 +98,10 @@ td {
     margin-right: 2vw;
 }*/
 
+.pad-top-xs {
+    padding-top: 1vw;
+}
+
 .pad-top-s {
     padding-top: 2.5vw;
 }
@@ -121,9 +126,14 @@ td {
     font-size: 3.5vw;
 }
 
+table.grey {
+    border-collapse: separate;
+    margin-bottom: 5vw;
+}
+
 .grey {
     background-color: #373737;
-    width: 60vw;
+    min-width: 60vw;
     height: 10vw;
     margin: auto;
     margin-top: 3vw;
