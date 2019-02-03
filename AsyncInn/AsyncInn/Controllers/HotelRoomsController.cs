@@ -12,14 +12,25 @@ namespace AsyncInn.Controllers
 {
     public class HotelRoomsController : Controller
     {
+        /// <summary>
+        /// Brings in private, read only database context 
+        /// </summary>
         private readonly AsyncInnDbContext _context;
 
+        /// <summary>
+        /// Publicly brings in db context
+        /// </summary>
+        /// <param name="context">Database context</param>
         public HotelRoomsController(AsyncInnDbContext context)
         {
             _context = context;
         }
 
         // GET: HotelRooms
+        /// <summary>
+        /// This method gets the created hotel rooms to display
+        /// </summary>
+        /// <returns>Index view</returns>
         public async Task<IActionResult> Index()
         {
             var asyncInnDbContext = _context.HotelRooms.Include(h => h.Hotel).Include(h => h.Room);
@@ -27,6 +38,12 @@ namespace AsyncInn.Controllers
         }
 
         // GET: HotelRooms/Details/5
+        /// <summary>
+        /// This method allows the user to view a hotel room's details
+        /// </summary>
+        /// <param name="hotelID">Hotel id</param>
+        /// <param name="roomID">Room id</param>
+        /// <returns>Details view</returns>
         public async Task<IActionResult> Details(int? hotelID, int? roomID)
         {
             if (hotelID == null || roomID == null)
@@ -47,6 +64,10 @@ namespace AsyncInn.Controllers
         }
 
         // GET: HotelRooms/Create
+        /// <summary>
+        /// THis method initiates the hotel room create operation
+        /// </summary>
+        /// <returns>Create view</returns>
         public IActionResult Create()
         {
             ViewData["HotelID"] = new SelectList(_context.Hotels, "ID", "Name");
@@ -55,8 +76,11 @@ namespace AsyncInn.Controllers
         }
 
         // POST: HotelRooms/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// This method posts a new hotel room
+        /// </summary>
+        /// <param name="hotelRoom">newly created hotel room</param>
+        /// <returns>Redirects user back to HotelRoom index view</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("HotelID,RoomID,RoomNumber,Rate,PetFriendly")] HotelRoom hotelRoom)
@@ -73,6 +97,12 @@ namespace AsyncInn.Controllers
         }
 
         // GET: HotelRooms/Edit/5
+        /// <summary>
+        /// This method gets the room to be edited by composite key ID
+        /// </summary>
+        /// <param name="hotelID">Hotel ID</param>
+        /// <param name="roomID">Room ID</param>
+        /// <returns>Hotel room to be edited</returns>
         public async Task<IActionResult> Edit(int? hotelID, int? roomID)
         {
             if (hotelID == null || roomID == null)
@@ -91,6 +121,13 @@ namespace AsyncInn.Controllers
         }
 
         // POST: HotelRooms/Edit/5
+        /// <summary>
+        /// This method posts the desired edit and takes the user back to the HotelRoom index
+        /// </summary>
+        /// <param name="hotelID">Hotel id</param>
+        /// <param name="roomID">Room id</param>
+        /// <param name="hotelRoom">Hotel room to be edited</param>
+        /// <returns>Redirects user back to HotelRoom index view</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int hotelID, int roomID, [Bind("HotelID,RoomID,RoomNumber,Rate,PetFriendly")] HotelRoom hotelRoom)
@@ -126,6 +163,12 @@ namespace AsyncInn.Controllers
         }
 
         // GET: HotelRooms/Delete/5
+        /// <summary>
+        /// This method initiates the delete operation by getting the room to be deleted
+        /// </summary>
+        /// <param name="hotelID">Hotel id</param>
+        /// <param name="roomID">Room id</param>
+        /// <returns>Hotel room to be deleted</returns>
         public async Task<IActionResult> Delete(int? hotelID, int? roomID)
         {
             if (hotelID == null || roomID == null)
@@ -146,6 +189,12 @@ namespace AsyncInn.Controllers
         }
 
         // POST: HotelRooms/Delete/5
+        /// <summary>
+        /// This method completes the delete function by posting back to the index
+        /// </summary>
+        /// <param name="hotelID">Hotel id</param>
+        /// <param name="roomID">Room id</param>
+        /// <returns>Redirects user back to HotelRoom index view</returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int hotelID, int roomID)
@@ -156,6 +205,12 @@ namespace AsyncInn.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        /// <summary>
+        /// This method confirms a hotel room exists by hotel & room IDs
+        /// </summary>
+        /// <param name="hotelID">Hotel id</param>
+        /// <param name="roomID">Room id</param>
+        /// <returns>Desired HotelRoom</returns>
         private bool HotelRoomExists(int hotelID, int roomID)
         {
             return _context.HotelRooms.Any(e => e.HotelID == hotelID && e.RoomID == roomID);
