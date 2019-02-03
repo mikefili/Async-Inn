@@ -22,56 +22,70 @@
     </ul>
 
     <h2 class="pad-top-s CRUD">Edit A Hotel</h2>
-    <hr />
-    <div class="center">
-        <div class="center">
+    <div class="align-left">
+        <div class="">
             <form asp-action="Edit">
                 <div asp-validation-summary="ModelOnly" class=""></div>
                 <input type="hidden" asp-for="ID" />
-                <div class="">
-                    <label asp-for="Name" class=""></label>
-                    <input asp-for="Name" class="" />
-                    <span asp-validation-for="Name" class=""></span>
-                </div>
-                <div class="">
-                    <label asp-for="StreetAddress" class=""></label>
-                    <input asp-for="StreetAddress" class="" />
-                    <span asp-validation-for="StreetAddress" class=""></span>
-                </div>
-                <div class="">
-                    <label asp-for="City" class=""></label>
-                    <input asp-for="City" class="" />
-                    <span asp-validation-for="City" class=""></span>
-                </div>
-                <div class="">
-                    <label asp-for="State" class=""></label>
-                    <input asp-for="State" class="" />
-                    <span asp-validation-for="State" class=""></span>
-                </div>
-                <div class="">
-                    <label asp-for="ZipCode" class=""></label>
-                    <input asp-for="ZipCode" class="" />
-                    <span asp-validation-for="ZipCode" class=""></span>
-                </div>
-                <div class="">
-                    <label asp-for="Phone" class=""></label>
-                    <input asp-for="Phone" class="" />
-                    <span asp-validation-for="Phone" class=""></span>
-                </div>
-                <div class="">
-                    <input type="submit" value="Save" class="" />
+                <div class="grey container-l">
+                    <div class="auto-margin pad-top-s pad-bottom-s">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><label asp-for="Name" class=""></label></td>
+                                        <td class="align-right">
+                                            <input asp-for="Name" class="input" />
+                                            <span asp-validation-for="Name" class=""></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label asp-for="StreetAddress" class=""></label></td>
+                                        <td>
+                                            <input asp-for="StreetAddress" class="input" />
+                                            <span asp-validation-for="StreetAddress" class=""></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label asp-for="City" class=""></label></td>
+                                        <td>
+                                            <input asp-for="City" class="input" />
+                                            <span asp-validation-for="City" class=""></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label asp-for="State" class=""></label></td>
+                                        <td>
+                                            <input asp-for="State" class="input" />
+                                            <span asp-validation-for="State" class=""></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label asp-for="ZipCode" class=""></label></td>
+                                        <td>
+                                            <input asp-for="ZipCode" class="input" />
+                                            <span asp-validation-for="ZipCode" class=""></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label asp-for="Phone" class=""></label></td>
+                                        <td>
+                                            <input asp-for="Phone" class="input" />
+                                            <span asp-validation-for="Phone" class=""></span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="center">
+                                <input type="submit" value="Save" class="button" />
+                                <p><a asp-action="Index" class="center">Back to List</a></p>
+                            </div>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
-
-    <div>
-        <a asp-action="Index">Back to List</a>
-    </div>
-
     @section Scripts {
         @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     }
-
 </body>
 </html>

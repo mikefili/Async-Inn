@@ -22,33 +22,27 @@
     </ul>
 
     <h2 class="pad-top-s CRUD">Edit A Room</h2>
-    <hr />
     <div class="center">
         <div class="center">
             <form asp-action="Edit">
                 <div asp-validation-summary="ModelOnly" class=""></div>
                 <input type="hidden" asp-for="ID" />
-                <div class="form-group">
-                    <label asp-for="Name" class=""></label>
-                    <input asp-for="Name" class="" />
-                    <span asp-validation-for="Name" class=""></span>
-                </div>
-                <div class="">
-                    <label asp-for="Layout" class=""></label>
-                    <select asp-for="Layout" class="" asp-items="@Html.GetEnumSelectList<AsyncInn.Models.Layout>()"></select>
-                    <span asp-validation-for="Layout" class=""></span>
-                </div>
-                <div class="">
-                    <input type="submit" value="Save" class="" />
+                <div class="grey container-l">
+                    <div class="pad-top-s container-m auto-margin align-left">
+                        <label asp-for="Name" class=""></label>
+                        <input asp-for="Name" class="input" />
+                        <span asp-validation-for="Name" class=""></span>
+                        <br />
+                        <label asp-for="Layout" class=""></label>
+                        <select asp-for="Layout" class="input" asp-items="@Html.GetEnumSelectList<AsyncInn.Models.Layout>()"></select>
+                        <span asp-validation-for="Layout" class=""></span>
+                        <input type="submit" value="Save" class="button" />
+                        <p class="center pad-top-xs"><a asp-action="Index" class="">Back to List</a></p>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
-
-    <div>
-        <a asp-action="Index">Back to List</a>
-    </div>
-
     @section Scripts {
         @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     }

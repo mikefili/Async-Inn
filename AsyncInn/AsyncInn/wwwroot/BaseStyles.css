@@ -37,6 +37,15 @@ a.nav-s:hover {
     border-bottom: 3px solid white;
 }
 
+.search-container {
+    width: 16vw;
+}
+
+.container-xs {
+    min-width: 6vw;
+    max-width: 8vw;
+}
+
 .container-s {
     min-width: 10vw;
     max-width: 20vw;
@@ -52,12 +61,26 @@ a.nav-s:hover {
     max-width: 60vw;
 }
 
+.container-xl {
+    min-width: 80vw;
+    max-width: 90vw;
+}
+
+td.mute-pad {
+    padding: 0;
+}
+
 .input {
-    margin: 1vw;
-    padding: 1vw 2vw 0vw 2vw;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.5vw;
-    text-align: center;
+    text-align: left;
+    width: auto;
+}
+
+.image-bkg {
+    background-image: url(bkg.png);
+    background-position: center;
+    background-size: cover;
 }
 
 .search {
@@ -97,7 +120,9 @@ a.nav-s:hover {
 }
 
 .on-page:hover {
-    font-size: 2.5vw;
+    background: -webkit-linear-gradient(#ffffff, #006cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .center {
@@ -136,8 +161,49 @@ td {
     padding-top: 15vw;
 }
 
+.pad-bottom-xs {
+    padding-bottom: 1vw;
+}
+
+.pad-bottom-s {
+    padding-bottom: 2.5vw;
+}
+
+.pad-bottom-m {
+    padding-bottom: 5vw;
+}
+
+.pad-bottom-l {
+    padding-bottom: 10vw;
+}
+
+.pad-bottom-xl {
+    padding-bottom: 15vw;
+}
+
 .center {
     text-align: center;
+}
+
+.auto-margin {
+    margin: auto;
+    width: 40vw;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.align-left {
+    text-align: left;
 }
 
 .welcome {
@@ -151,10 +217,9 @@ table.grey {
 
 .grey {
     background-color: #373737;
-    min-width: 50vw;
-    height: 10vw;
+    height: auto;
+    min-height: 15vw;
     margin: auto;
-    margin-top: 3vw;
     border: 1px solid grey;
     border-radius: 0.5vw;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);

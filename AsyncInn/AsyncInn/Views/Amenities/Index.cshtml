@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1 class="welcome">Welcome to the <span class="logo">ASYNC INN</span> Admin Page</h1>
-    <ul class="navigation">
+    <ul class="navigation pad-bottom-s">
         <li><a href="~/" class="nav-s">Home</a></li>
         <li><a href="~/Hotels" class="nav-s">Hotels</a></li>
         <li><a href="~/Rooms" class="nav-s">Rooms</a></li>
@@ -21,7 +21,7 @@
         <li><a href="~/Amenities" class="on-page">Amenities</a></li>
     </ul>
 
-    <div class="pad-top-s">
+    <div class="grey container-m">
         <form method="post" class="pad-top-xs">
             <label name="searchString" class="search">Search For An Amenity</label>
             <br />
@@ -36,7 +36,7 @@
         <a asp-action="Create" class="CRUD">Create A New Amenity</a>
     </p>
     <div class="center">
-        <table class="center grey">
+        <table class="center grey container-xl">
             <thead>
                 <tr>
                     <th class="pad-top-s emphasize-caps">
@@ -54,7 +54,7 @@
                         </td>
                         <td>
                             <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                            <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                            @*<a asp-action="Details" asp-route-id="@item.ID">Details</a> |*@
                             <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
                         </td>
                     </tr>

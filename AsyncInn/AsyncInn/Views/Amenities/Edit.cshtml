@@ -27,11 +27,13 @@
                 <div asp-validation-summary="ModelOnly" class=""></div>
                 <input type="hidden" asp-for="ID" />
                 <div class="grey container-m">
-                    <label asp-for="Name" class=""></label>
-                    <input asp-for="Name" class="input" />
-                    <span asp-validation-for="Name" class=""></span>
-                    <p><input type="submit" value="Save" class="button" /></p>
-                    <a asp-action="Index">Back to List</a>
+                    <div class="pad-top-s">
+                        <label asp-for="Name" class=""></label>
+                        <input asp-for="Name" class="input" />
+                        <span asp-validation-for="Name" class=""></span>
+                        <p><input type="submit" value="Save" class="button" /></p>
+                        <a asp-action="Index">Back to List</a>
+                    </div>
                 </div>
             </form>
         </div>
