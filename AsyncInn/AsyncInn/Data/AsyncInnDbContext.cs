@@ -26,7 +26,7 @@ namespace AsyncInn.Data
                    ID = 1,
                    Name = "Downtown Seattle",
                    StreetAddress = "123 1st Ave S",
-                   Phone = "12065551234",
+                   Phone = "(206) 555-1234",
                    City = "Seattle",
                    State = "WA",
                    ZipCode = "98101"
@@ -36,7 +36,7 @@ namespace AsyncInn.Data
                    ID = 2,
                    Name = "Ballard",
                    StreetAddress = "1 Main St",
-                   Phone = "12065551234",
+                   Phone = "(206) 555-5678",
                    City = "Seattle",
                    State = "WA",
                    ZipCode = "98107"
@@ -46,7 +46,7 @@ namespace AsyncInn.Data
                    ID = 3,
                    Name = "Downtown Renton",
                    StreetAddress = "1234 Rainier Ave S",
-                   Phone = "12065551234",
+                   Phone = "(425) 555-1234",
                    City = "Renton",
                    State = "WA",
                    ZipCode = "98057"
@@ -56,7 +56,7 @@ namespace AsyncInn.Data
                    ID = 4,
                    Name = "Bellevue Square",
                    StreetAddress = "1 Bellevue Square",
-                   Phone = "12065551234",
+                   Phone = "(425) 555-5678",
                    City = "Bellevue",
                    State = "WA",
                    ZipCode = "98004"
@@ -66,7 +66,7 @@ namespace AsyncInn.Data
                    ID = 5,
                    Name = "Everett",
                    StreetAddress = "3 Everett Way",
-                   Phone = "12065551234",
+                   Phone = "(360) 555-1234",
                    City = "Everett",
                    State = "WA",
                    ZipCode = "98206"

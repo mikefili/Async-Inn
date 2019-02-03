@@ -2,58 +2,39 @@
 
 @{
     ViewData["Title"] = "Index";
+    Layout = "_Layout";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Async Inn Admin: </title>
-    <link href="~/Reset.css" rel="stylesheet" />
-    <link href="~/BaseStyles.css" rel="stylesheet" />
-</head>
-<body>
-    <h1 class="welcome">Welcome to the <span class="logo">ASYNC INN</span> Admin Page</h1>
-    <ul class="navigation">
-        <li><a href="~/" class="nav-s">Home</a></li>
-        <li><a href="~/Hotels" class="nav-s">Hotels</a></li>
-        <li><a href="~/Rooms" class="nav-s">Rooms</a></li>
-        <li><a href="~/HotelRooms" class="nav-s">Room Details</a></li>
-        <li><a href="~/RoomAmenities" class="on-page">Update Amenities</a></li>
-        <li><a href="~/Amenities" class="nav-s">Amenities</a></li>
-    </ul>
-
-    <p class="pad-top-s pad-bottom-s">
-        <a asp-action="Create" class="CRUD">Add Amenities To A Room</a>
-    </p>
-    <div class="center">
-        <table class="grey container-xl">
-            <thead>
+<p class="pad-top-s pad-bottom-s">
+    <a asp-action="Create" class="CRUD">Add Amenities To A Room</a>
+</p>
+<div class="center">
+    <table class="grey container-xl">
+        <thead>
+            <tr>
+                <th class="pad-top-s pad-bottom-xs emphasize-caps">
+                    @Html.DisplayNameFor(model => model.Amenities)
+                </th>
+                <th class="emphasize-caps">
+                    @Html.DisplayNameFor(model => model.Room)
+                </th>
+                <th class="emphasize-caps">UPDATE</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
                 <tr>
-                    <th class="pad-top-s pad-bottom-xs emphasize-caps">
-                        @Html.DisplayNameFor(model => model.Amenities)
-                    </th>
-                    <th class="emphasize-caps">
-                        @Html.DisplayNameFor(model => model.Room)
-                    </th>
-                    <th class="emphasize-caps">UPDATE</th>
+                    <td class="">
+                        @Html.DisplayFor(modelItem => item.Amenities.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Room.Name)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { item.AmenitiesID, item.RoomID })
+                    </td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td class="">
-                            @Html.DisplayFor(modelItem => item.Amenities.Name)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Room.Name)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Delete", "Delete", new { item.AmenitiesID, item.RoomID })
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-</body>
-</html>
+            }
+        </tbody>
+    </table>
+</div>

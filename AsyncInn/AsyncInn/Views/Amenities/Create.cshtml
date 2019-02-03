@@ -2,49 +2,29 @@
 
 @{
     ViewData["Title"] = "Create";
+    Layout = "_Layout";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Async Inn Admin: </title>
-    <link href="~/Reset.css" rel="stylesheet" />
-    <link href="~/BaseStyles.css" rel="stylesheet" />
-</head>
-<body>
-    <h1 class="welcome">Welcome to the <span class="logo">ASYNC INN</span> Admin Page</h1>
-    <ul class="navigation">
-        <li><a href="~/" class="nav-s">Home</a></li>
-        <li><a href="~/Hotels" class="nav-s">Hotels</a></li>
-        <li><a href="~/Rooms" class="nav-s">Rooms</a></li>
-        <li><a href="~/HotelRooms" class="nav-s">Room Details</a></li>
-        <li><a href="~/RoomAmenities" class="nav-s">Update Amenities</a></li>
-        <li><a href="~/Amenities" class="on-page">Amenities</a></li>
-    </ul>
-
-    <h2 class="pad-top-s CRUD">Amenities</h2>
+<h2 class="pad-top-s CRUD">Amenities</h2>
+<div class="center">
     <div class="center">
-        <div class="center">
-            <form asp-action="Create">
-                <div asp-validation-summary="ModelOnly" class=""></div>
-                <div class=" grey container-m">
-                    <div class="pad-top-s">
-                        <label asp-for="Name" class=""></label>
-                        <input asp-for="Name" class="input" />
-                        <span asp-validation-for="Name" class=""></span>
-                        <input type="submit" value="Create" class="button" />
-                    </div>
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class=""></div>
+            <div class=" grey container-m">
+                <div class="pad-top-s">
+                    <label asp-for="Name" class=""></label>
+                    <input asp-for="Name" class="input" />
+                    <span asp-validation-for="Name" class=""></span>
+                    <input type="submit" value="Create" class="button" />
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
+</div>
 
-    <div>
-        <a asp-action="Index">Back to List</a>
-    </div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
 
-    @section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    }
-
-</body>
-</html>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

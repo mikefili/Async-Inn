@@ -2,45 +2,24 @@
 
 @{
     ViewData["Title"] = "Details";
+    Layout = "_Layout";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Async Inn Admin: </title>
-    <link href="~/Reset.css" rel="stylesheet" />
-    <link href="~/BaseStyles.css" rel="stylesheet" />
-</head>
-<body>
-    <h1 class="welcome">Welcome to the <span class="logo">ASYNC INN</span> Admin Page</h1>
-    <ul class="navigation">
-        <li><a href="~/" class="nav-s">Home</a></li>
-        <li><a href="~/Hotels" class="nav-s">Hotels</a></li>
-        <li><a href="~/Rooms" class="nav-s">Rooms</a></li>
-        <li><a href="~/HotelRooms" class="nav-s">Room Details</a></li>
-        <li><a href="~/RoomAmenities" class="nav-s">Update Amenities</a></li>
-        <li><a href="~/Amenities" class="on-page">Amenities</a></li>
-    </ul>
-
-    <h2 class="pad-top-s CRUD">Details</h2>
-
-    <div class="center">
-        <table class="center grey">
-            <tbody>
-                <tr>
-                    <td class="">
-                        @Html.DisplayNameFor(model => model.Name)
-                    </td>
-                    <td class="">
-                        @Html.DisplayFor(model => model.Name)
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div>
-        <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
-        <a asp-action="Index">Back to List</a>
-    </div>
-
-</body>
-</html>
+<h2 class="pad-top-s CRUD">Details</h2>
+<div class="center">
+    <table class="center grey">
+        <tbody>
+            <tr>
+                <td class="">
+                    @Html.DisplayNameFor(model => model.Name)
+                </td>
+                <td class="">
+                    @Html.DisplayFor(model => model.Name)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

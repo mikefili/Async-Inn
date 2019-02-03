@@ -2,75 +2,56 @@
 
 @{
     ViewData["Title"] = "Index";
+    Layout = "_Layout";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Async Inn Admin: Rooms</title>
-    <link href="~/Reset.css" rel="stylesheet" />
-    <link href="~/BaseStyles.css" rel="stylesheet" />
-</head>
-<body>
-    <h1 class="welcome">Welcome to the <span class="logo">ASYNC INN</span> Admin Page</h1>
-    <ul class="navigation pad-bottom-s">
-        <li><a href="~/" class="nav-s">Home</a></li>
-        <li><a href="~/Hotels" class="nav-s">Hotels</a></li>
-        <li><a href="~/Rooms" class="on-page">Rooms</a></li>
-        <li><a href="~/HotelRooms" class="nav-s">Room Details</a></li>
-        <li><a href="~/RoomAmenities" class="nav-s">Update Amenities</a></li>
-        <li><a href="~/Amenities" class="nav-s">Amenities</a></li>
-    </ul>
+<div class="grey container-m">
+    <form method="post" class="pad-top-xs">
+        <label name="searchString" class="search">Search For A Room</label>
+        <br />
+        <input name="searchString" class="input" />
+        <button type="submit" class="button">SEARCH</button>
+        <p>Current Room Count: @Model.ToList().Count</p>
+        <p><a href="~/Rooms">CLEAR SEARCH</a></p>
+    </form>
+</div>
 
-    <div class="grey container-m">
-        <form method="post" class="pad-top-xs">
-            <label name="searchString" class="search">Search For A Room</label>
-            <br />
-            <input name="searchString" class="input" />
-            <button type="submit" class="button">SEARCH</button>
-            <p>Current Room Count: @Model.ToList().Count</p>
-            <p><a href="~/Rooms">CLEAR SEARCH</a></p>
-        </form>
-    </div>
-
-    <p class="pad-top-s">
-        <a asp-action="Create" class="CRUD">Create A New Room Type</a>
-    </p>
-    <div class="center">
-        <table class="center grey">
-            <thead>
-                <tr>
-                    <th class="pad-top-s emphasize-caps">
-                        @Html.DisplayNameFor(model => model.Name)
-                    </th>
-                    <th class="emphasize-caps">
-                        @Html.DisplayNameFor(model => model.Layout)
-                    </th>
-                    <th class="emphasize-caps">Update</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td class="pad-top-s">
-                            @Html.DisplayFor(modelItem => item.Name)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Layout)
-                        </td>
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                            @*<a asp-action="Details" asp-route-id="@item.ID">Details</a> |*@
-                            <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-                        </td>
-                    </tr>
-                    <tr class="pad-top-s"></tr>
-                }
-            </tbody>
+<p class="pad-top-s">
+    <a asp-action="Create" class="CRUD">Create A New Room Type</a>
+</p>
+<div class="center">
+    <table class="center grey">
+        <thead>
             <tr>
-                <td class="pad-top-s"></td>
+                <th class="pad-top-s emphasize-caps">
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th class="emphasize-caps">
+                    @Html.DisplayNameFor(model => model.Layout)
+                </th>
+                <th class="emphasize-caps">Update</th>
             </tr>
-        </table>
-    </div>
-</body>
-</html>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="pad-top-s">
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Layout)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                        @*<a asp-action="Details" asp-route-id="@item.ID">Details</a> |*@
+                        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                    </td>
+                </tr>
+                <tr class="pad-top-s"></tr>
+            }
+        </tbody>
+        <tr>
+            <td class="pad-top-s"></td>
+        </tr>
+    </table>
+</div>

@@ -2,69 +2,50 @@
 
 @{
     ViewData["Title"] = "Create";
+    Layout = "_Layout";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Async Inn Admin: </title>
-    <link href="~/Reset.css" rel="stylesheet" />
-    <link href="~/BaseStyles.css" rel="stylesheet" />
-</head>
-<body>
-    <h1 class="welcome">Welcome to the <span class="logo">ASYNC INN</span> Admin Page</h1>
-    <ul class="navigation">
-        <li><a href="~/" class="nav-s">Home</a></li>
-        <li><a href="~/Hotels" class="nav-s">Hotels</a></li>
-        <li><a href="~/Rooms" class="nav-s">Rooms</a></li>
-        <li><a href="~/HotelRooms" class="on-page">Room Details</a></li>
-        <li><a href="~/RoomAmenities" class="nav-s">Update Amenities</a></li>
-        <li><a href="~/Amenities" class="nav-s">Amenities</a></li>
-    </ul>
+<h2 class="pad-top-s CRUD">Add Hotel Room Details</h2>
 
-    <h2 class="pad-top-s CRUD">Add Hotel Room Details</h2>
-
-    <h4>HotelRoom</h4>
-    <hr />
+<h4>HotelRoom</h4>
+<hr />
+<div class="center">
     <div class="center">
-        <div class="center">
-            <form asp-action="Create">
-                <div asp-validation-summary="ModelOnly" class=""></div>
-                <div class="">
-                    <label asp-for="HotelID" class=""></label>
-                    <select asp-for="HotelID" class="" asp-items="ViewBag.HotelID"></select>
-                </div>
-                <div class="">
-                    <label asp-for="RoomID" class=""></label>
-                    <select asp-for="RoomID" class="" asp-items="ViewBag.RoomID"></select>
-                </div>
-                <div class="">
-                    <label asp-for="RoomNumber" class=""></label>
-                    <input asp-for="RoomNumber" class="" />
-                    <span asp-validation-for="RoomNumber" class=""></span>
-                </div>
-                <div class="">
-                    <label asp-for="Rate" class=""></label>
-                    <input asp-for="Rate" class="" />
-                    <span asp-validation-for="Rate" class=""></span>
-                </div>
-                <div class="">
-                    <label class="">
-                        <input class="" asp-for="PetFriendly" /> @Html.DisplayNameFor(model => model.PetFriendly)
-                    </label>
-                </div>
-                <div class="">
-                    <input type="submit" value="Create" class="" />
-                </div>
-            </form>
-        </div>
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class=""></div>
+            <div class="">
+                <label asp-for="HotelID" class=""></label>
+                <select asp-for="HotelID" class="" asp-items="ViewBag.HotelID"></select>
+            </div>
+            <div class="">
+                <label asp-for="RoomID" class=""></label>
+                <select asp-for="RoomID" class="" asp-items="ViewBag.RoomID"></select>
+            </div>
+            <div class="">
+                <label asp-for="RoomNumber" class=""></label>
+                <input asp-for="RoomNumber" class="" />
+                <span asp-validation-for="RoomNumber" class=""></span>
+            </div>
+            <div class="">
+                <label asp-for="Rate" class=""></label>
+                <input asp-for="Rate" class="" />
+                <span asp-validation-for="Rate" class=""></span>
+            </div>
+            <div class="">
+                <label class="">
+                    <input class="" asp-for="PetFriendly" /> @Html.DisplayNameFor(model => model.PetFriendly)
+                </label>
+            </div>
+            <div class="">
+                <input type="submit" value="Create" class="" />
+            </div>
+        </form>
     </div>
+</div>
 
-    <div>
-        <a asp-action="Index">Back to List</a>
-    </div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
 
-    @section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    }
-</body>
-</html>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

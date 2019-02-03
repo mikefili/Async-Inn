@@ -2,30 +2,8 @@
 
 @{
     ViewData["Title"] = "Edit";
+    Layout = "_Layout";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Async Inn Admin: </title>
-    <link href="~/Reset.css" rel="stylesheet" />
-    <link href="~/BaseStyles.css" rel="stylesheet" />
-</head>
-<body>
-    <h1 class="welcome">Welcome to the <span class="logo">ASYNC INN</span> Admin Page</h1>
-    <ul class="navigation">
-        <li><a href="~/" class="nav-s">Home</a></li>
-        <li><a href="~/Hotels" class="nav-s">Hotels</a></li>
-        <li><a href="~/Rooms" class="nav-s">Rooms</a></li>
-        <li><a href="~/HotelRooms" class="nav-s">Room Details</a></li>
-        <li><a href="~/RoomAmenities" class="on-page">Update Amenities</a></li>
-        <li><a href="~/Amenities" class="nav-s">Amenities</a></li>
-    </ul>
-
-    <h2 class="pad-top-s CRUD">Edit Room Amenities</h2>
-</body>
-</html>
-
-<hr />
 <div class="center">
     <div class="center">
         <form asp-action="Edit">
@@ -35,14 +13,10 @@
             <div class="">
                 <input type="submit" value="Save" class="" />
             </div>
+            <p class="center"><a asp-action="Index">Back to List</a></p>
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

@@ -2,45 +2,27 @@
 
 @{
     ViewData["Title"] = "Delete";
+    Layout = "_Layout";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Async Inn Admin: </title>
-    <link href="~/Reset.css" rel="stylesheet" />
-    <link href="~/BaseStyles.css" rel="stylesheet" />
-</head>
-<body>
-    <h1 class="welcome">Welcome to the <span class="logo">ASYNC INN</span> Admin Page</h1>
-    <ul class="navigation">
-        <li><a href="~/" class="nav-s">Home</a></li>
-        <li><a href="~/Hotels" class="on-page">Hotels</a></li>
-        <li><a href="~/Rooms" class="nav-s">Rooms</a></li>
-        <li><a href="~/HotelRooms" class="nav-s">Room Details</a></li>
-        <li><a href="~/RoomAmenities" class="nav-s">Update Amenities</a></li>
-        <li><a href="~/Amenities" class="nav-s">Amenities</a></li>
-    </ul>
-    <h2 class="pad-top-s CRUD">Delete A Hotel</h2>
-    <div class="center">
-        <dl class="center grey container-m">
-            <h3 class="pad-top-s pad-bottom-s">Are you sure you want to delete this hotel?</h3>
-            <div class="container-m auto-margin">
-                <dd class="center">
-                    @Html.DisplayFor(model => model.Name)
-                </dd>
-                <dd class="center">
-                    @Html.DisplayFor(model => model.FormattedAddress)
-                </dd>
-                <dd class="center">
-                    @Html.DisplayFor(model => model.Phone)
-                </dd>
-            </div>
-            <form asp-action="Delete">
-                <input type="hidden" asp-for="ID" />
-                <input type="submit" value="Delete" class="button" /> |
-                <a asp-action="Index">Back to List</a>
-            </form>
-        </dl>
-    </div>
-</body>
-</html>
+<h2 class="pad-top-s CRUD">Delete A Hotel</h2>
+<div class="center">
+    <dl class="center grey container-m">
+        <h3 class="pad-top-s pad-bottom-s">Are you sure you want to delete this hotel?</h3>
+        <div class="container-m auto-margin">
+            <dd class="center">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dd class="center">
+                @Html.DisplayFor(model => model.FormattedAddress)
+            </dd>
+            <dd class="center">
+                @Html.DisplayFor(model => model.Phone)
+            </dd>
+        </div>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="ID" />
+            <input type="submit" value="Delete" class="button" /> |
+            <a asp-action="Index">Back to List</a>
+        </form>
+    </dl>
+</div>
