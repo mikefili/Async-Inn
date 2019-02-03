@@ -20,42 +20,33 @@
         <li><a href="~/RoomAmenities" class="nav-s">Update Amenities</a></li>
         <li><a href="~/Amenities" class="nav-s">Amenities</a></li>
     </ul>
-
     <h2 class="pad-top-s CRUD">Edit Existing Hotel Room</h2>
-
-    <hr />
     <div class="center">
         <div class="center">
             <form asp-action="Edit">
                 <div asp-validation-summary="ModelOnly" class=""></div>
                 <input type="hidden" asp-for="HotelID" />
                 <input type="hidden" asp-for="RoomID" />
-                <div class="">
-                    <label asp-for="RoomNumber" class=""></label>
-                    <input asp-for="RoomNumber" class="" />
-                    <span asp-validation-for="RoomNumber" class=""></span>
-                </div>
-                <div class="">
-                    <label asp-for="Rate" class=""></label>
-                    <input asp-for="Rate" class="" />
-                    <span asp-validation-for="Rate" class=""></span>
-                </div>
-                <div class="">
-                    <label class="">
-                        <input class="" asp-for="PetFriendly" /> @Html.DisplayNameFor(model => model.PetFriendly)
-                    </label>
-                </div>
-                <div class="">
-                    <input type="submit" value="Save" class="" />
+                <div class="grey container-l">
+                    <div class="pad-top-s container-m auto-margin align-left">
+                        <label asp-for="RoomNumber" class=""></label>
+                        <input asp-for="RoomNumber" class="input" />
+                        <span asp-validation-for="RoomNumber" class=""></span>
+                        <br />
+                        <label asp-for="Rate" class=""></label>
+                        <input asp-for="Rate" class="input" />
+                        <span asp-validation-for="Rate" class=""></span>
+                        <br />
+                        <label class="">
+                            <input class="" asp-for="PetFriendly" /> @Html.DisplayNameFor(model => model.PetFriendly)
+                        </label>
+                        <input type="submit" value="Save" class="button" />
+                        <p class="center pad-top-xs">        <a asp-action="Index">Back to List</a></p>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
-
-    <div>
-        <a asp-action="Index">Back to List</a>
-    </div>
-
     @section Scripts {
         @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     }

@@ -24,48 +24,30 @@
     <h2 class="pad-top-s CRUD">Delete Hotel Room Details</h2>
 
     <h3>Are you sure you want to delete this?</h3>
-    <div class="center">
-        <h4>Hotel Room</h4>
-        <hr />
-        <dl class="">
-            <dt class="">
-                @Html.DisplayNameFor(model => model.RoomNumber)
+    <div class="center pad-top-s">
+        <dl class=" grey container-m">
+            <dt class="pad-top-s">
+                @Html.DisplayNameFor(model => model.RoomNumber): @Html.DisplayFor(model => model.RoomNumber)
             </dt>
-            <dd class="">
-                @Html.DisplayFor(model => model.RoomNumber)
-            </dd>
             <dt class="">
-                @Html.DisplayNameFor(model => model.Rate)
+                @Html.DisplayNameFor(model => model.Rate):                 @Html.DisplayFor(model => model.Rate)
             </dt>
-            <dd class="">
-                @Html.DisplayFor(model => model.Rate)
-            </dd>
             <dt class="">
-                @Html.DisplayNameFor(model => model.PetFriendly)
+                @Html.DisplayNameFor(model => model.PetFriendly):                 @Html.DisplayFor(model => model.PetFriendly)
             </dt>
-            <dd class="">
-                @Html.DisplayFor(model => model.PetFriendly)
-            </dd>
             <dt class="">
-                @Html.DisplayNameFor(model => model.Hotel)
+                @Html.DisplayNameFor(model => model.Hotel):                 @Html.DisplayFor(model => model.Hotel.FormattedAddress)
             </dt>
-            <dd class="">
-                @Html.DisplayFor(model => model.Hotel.FormattedAddress)
-            </dd>
             <dt class="">
-                @Html.DisplayNameFor(model => model.Room)
+                @Html.DisplayNameFor(model => model.Room):                 @Html.DisplayFor(model => model.Room.Name)
             </dt>
-            <dd class="">
-                @Html.DisplayFor(model => model.Room.Name)
-            </dd>
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="HotelID" />
+                <input type="hidden" asp-for="RoomID" />
+                <input type="submit" value="Delete" class="button pad-top-xs" /> |
+                <a asp-action="Index">Back to List</a>
+            </form>
         </dl>
-
-        <form asp-action="Delete">
-            <input type="hidden" asp-for="HotelID" />
-            <input type="hidden" asp-for="RoomID" />
-            <input type="submit" value="Delete" class="" /> |
-            <a asp-action="Index">Back to List</a>
-        </form>
     </div>
 </body>
 </html>

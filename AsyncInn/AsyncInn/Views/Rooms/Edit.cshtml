@@ -37,7 +37,7 @@
                         <select asp-for="Layout" class="input" asp-items="@Html.GetEnumSelectList<AsyncInn.Models.Layout>()"></select>
                         <span asp-validation-for="Layout" class=""></span>
                         <input type="submit" value="Save" class="button" />
-                        <p class="center pad-top-xs"><a asp-action="Index" class="">Back to List</a></p>
+                        <span class="center pad-top-xs"><a asp-action="Index" class="">Back to List</a></span>
                     </div>
                 </div>
             </form>
