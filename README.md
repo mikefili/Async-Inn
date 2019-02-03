@@ -1,4 +1,6 @@
 # Welcome to the Async Inn Admin Page!
+## Deployment Link
+https://asyncinnmikefili.azurewebsites.net/
 
 ## Description
 Welcome, Async Inn staff, to the your new Administrator Portal. Use this application to manage Async Inn assets from a phone or computer, anywhere in the world. This solution will allow users to create, update, edit, and delete various hotel assets, ranging from hotel locations, rooms, and even amenities. Check out the navigation guide below and feel free to take the application out for a test drive.
