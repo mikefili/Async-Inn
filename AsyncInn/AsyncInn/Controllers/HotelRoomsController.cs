@@ -91,13 +91,11 @@ namespace AsyncInn.Controllers
         }
 
         // POST: HotelRooms/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("HotelID,RoomID,RoomNumber,Rate,PetFriendly")] HotelRoom hotelRoom)
+        public async Task<IActionResult> Edit(int hotelID, int roomID, [Bind("HotelID,RoomID,RoomNumber,Rate,PetFriendly")] HotelRoom hotelRoom)
         {
-            if (id != hotelRoom.HotelID)
+            if (hotelID != hotelRoom.HotelID || roomID != hotelRoom.RoomID)
             {
                 return NotFound();
             }
@@ -111,7 +109,7 @@ namespace AsyncInn.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!HotelRoomExists(hotelRoom.HotelID))
+                    if (!HotelRoomExists(hotelRoom.HotelID, hotelRoom.RoomID))
                     {
                         return NotFound();
                     }
@@ -158,9 +156,9 @@ namespace AsyncInn.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool HotelRoomExists(int id)
+        private bool HotelRoomExists(int hotelID, int roomID)
         {
-            return _context.HotelRooms.Any(e => e.HotelID == id);
+            return _context.HotelRooms.Any(e => e.HotelID == hotelID && e.RoomID == roomID);
         }
     }
 }

@@ -17,6 +17,7 @@ namespace AsyncInn.Models
 
         [Required(ErrorMessage = "Please provide a rate for the room")]
         [Display(Name = "Room Rate    ")]
+        [DataType(DataType.Currency)]
         [Range(0, 999.99)]
         public decimal Rate { get; set; }
 
