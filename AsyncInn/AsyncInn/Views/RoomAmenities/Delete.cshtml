@@ -7,26 +7,19 @@
 <h2 class="pad-top-s CRUD">Delete An Amenity</h2>
 
 <h3>Are you sure you want to delete this?</h3>
-<div class="center">
-    <dl class="center">
-        <dt class="">
-            @Html.DisplayNameFor(model => model.Amenities)
+<div class="center pad-top-s">
+    <dl class="grey container-m">
+        <dt class="pad-top-s">
+            Amenity: @Html.DisplayFor(model => model.Amenities.Name)
         </dt>
-        <dd class="">
-            @Html.DisplayFor(model => model.Amenities.Name)
-        </dd>
         <dt class="">
-            @Html.DisplayNameFor(model => model.Room)
+            @Html.DisplayNameFor(model => model.Room): @Html.DisplayFor(model => model.Room.Name)
         </dt>
-        <dd class="">
-            @Html.DisplayFor(model => model.Room.Name)
-        </dd>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="AmenitiesID" />
+            <input type="hidden" asp-for="RoomID" />
+            <input type="submit" value="Delete" class="button" /> |
+            <a asp-action="Index">Back to List</a>
+        </form>
     </dl>
-
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="AmenitiesID" />
-        <input type="hidden" asp-for="RoomID" />
-        <input type="submit" value="Delete" class="" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
 </div>
