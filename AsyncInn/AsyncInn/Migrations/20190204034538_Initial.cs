@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AsyncInn.Migrations
 {
-    public partial class SeedIssue : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -120,11 +120,11 @@ namespace AsyncInn.Migrations
                 columns: new[] { "ID", "City", "Name", "Phone", "State", "StreetAddress", "ZipCode" },
                 values: new object[,]
                 {
-                    { 1, "Seattle", "Downtown Seattle", "12065551234", "WA", "123 1st Ave S", "98101" },
-                    { 2, "Seattle", "Ballard", "12065551234", "WA", "1 Main St", "98107" },
-                    { 3, "Renton", "Downtown Renton", "12065551234", "WA", "1234 Rainier Ave S", "98057" },
-                    { 4, "Bellevue", "Bellevue Square", "12065551234", "WA", "1 Bellevue Square", "98004" },
-                    { 5, "Everett", "Everett", "12065551234", "WA", "3 Everett Way", "98206" }
+                    { 1, "Seattle", "Downtown Seattle", "(206) 555-1234", "WA", "123 1st Ave S", "98101" },
+                    { 2, "Seattle", "Ballard", "(206) 555-5678", "WA", "1 Main St", "98107" },
+                    { 3, "Renton", "Downtown Renton", "(425) 555-1234", "WA", "1234 Rainier Ave S", "98057" },
+                    { 4, "Bellevue", "Bellevue Square", "(425) 555-5678", "WA", "1 Bellevue Square", "98004" },
+                    { 5, "Everett", "Everett", "(360) 555-1234", "WA", "3 Everett Way", "98206" }
                 });
 
             migrationBuilder.InsertData(

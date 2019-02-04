@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AsyncInn.Migrations
 {
     [DbContext(typeof(AsyncInnDbContext))]
-    [Migration("20190203231401_RoomCount")]
-    partial class RoomCount
+    [Migration("20190204034538_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -97,7 +97,7 @@ namespace AsyncInn.Migrations
                             ID = 1,
                             City = "Seattle",
                             Name = "Downtown Seattle",
-                            Phone = "12065551234",
+                            Phone = "(206) 555-1234",
                             State = "WA",
                             StreetAddress = "123 1st Ave S",
                             ZipCode = "98101"
@@ -107,7 +107,7 @@ namespace AsyncInn.Migrations
                             ID = 2,
                             City = "Seattle",
                             Name = "Ballard",
-                            Phone = "12065551234",
+                            Phone = "(206) 555-5678",
                             State = "WA",
                             StreetAddress = "1 Main St",
                             ZipCode = "98107"
@@ -117,7 +117,7 @@ namespace AsyncInn.Migrations
                             ID = 3,
                             City = "Renton",
                             Name = "Downtown Renton",
-                            Phone = "12065551234",
+                            Phone = "(425) 555-1234",
                             State = "WA",
                             StreetAddress = "1234 Rainier Ave S",
                             ZipCode = "98057"
@@ -127,7 +127,7 @@ namespace AsyncInn.Migrations
                             ID = 4,
                             City = "Bellevue",
                             Name = "Bellevue Square",
-                            Phone = "12065551234",
+                            Phone = "(425) 555-5678",
                             State = "WA",
                             StreetAddress = "1 Bellevue Square",
                             ZipCode = "98004"
@@ -137,7 +137,7 @@ namespace AsyncInn.Migrations
                             ID = 5,
                             City = "Everett",
                             Name = "Everett",
-                            Phone = "12065551234",
+                            Phone = "(360) 555-1234",
                             State = "WA",
                             StreetAddress = "3 Everett Way",
                             ZipCode = "98206"
@@ -241,7 +241,7 @@ namespace AsyncInn.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("AsyncInn.Models.Room", "Room")
-                        .WithMany("HotelRoom")
+                        .WithMany("HotelRooms")
                         .HasForeignKey("RoomID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

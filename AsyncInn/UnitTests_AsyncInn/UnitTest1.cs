@@ -2,7 +2,7 @@ using System;
 using Xunit;
 using AsyncInn.Controllers;
 using AsyncInn.Data;
-using AsyncInn.Migrations;
+//using AsyncInn.Migrations;
 using AsyncInn.Models;
 using AsyncInn.Models.Interfaces;
 using AsyncInn.Models.Services;
