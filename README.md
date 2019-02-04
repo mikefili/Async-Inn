@@ -1,4 +1,6 @@
 # Welcome to the Async Inn Admin Page!
+## Deployment Link
+https://asyncinnmikefili.azurewebsites.net/
 
 ## Description
 Welcome, Async Inn staff, to the your new Administrator Portal. Use this application to manage Async Inn assets from a phone or computer, anywhere in the world. This solution will allow users to create, update, edit, and delete various hotel assets, ranging from hotel locations, rooms, and even amenities. Check out the navigation guide below and feel free to take the application out for a test drive.
@@ -15,8 +17,12 @@ Welcome, Async Inn staff, to the your new Administrator Portal. Use this applica
 - ASP.NET Core MVC
 - Entity Framework
 - Razor Pages
-- Full stack web application that will allow users to better manage the assets in their hotels.
-- CRUD Operations provide users the ability to modify and manage rooms, amenities, and new hotel locations as they are built.
+- Interfaces
+- Services
+- Full-Stack Web App
+
+## System Design
+![DB Schema](Assets/SchemaAsyncInn.png)
 
 ## User Interface Demo
 
@@ -24,7 +30,7 @@ Welcome, Async Inn staff, to the your new Administrator Portal. Use this applica
 ![UI Demo](Assets/landing_page.PNG)
 
 ### Hotels Page
-Create, edit, view, and delete Async Inn locations across the country.
+Create, edit, and delete Async Inn locations across the country.
 ![Hotels Page](Assets/hotel/hotel_page.PNG)
 
 #### Create
@@ -37,7 +43,7 @@ Create, edit, view, and delete Async Inn locations across the country.
 ![Delete Hotel](Assets/hotel/hotel_page_delete.PNG)
 
 ### Rooms Page
-Create, edit, view, and delete rooms at any Async Inn location across the country.
+Create, edit, and delete rooms at any Async Inn location across the country.
 ![Rooms Page](Assets/room/room_page.PNG)
 
 #### Create
@@ -50,7 +56,7 @@ Create, edit, view, and delete rooms at any Async Inn location across the countr
 ![Delete Room](Assets/room/room_page_delete.PNG)
 
 ### Hotel Rooms Page
-Create, edit, view, and delete individual rooms at Async Inn locations across the country.
+Create, edit, and delete individual rooms at Async Inn locations across the country.
 ![Hotel Rooms Page](Assets/hotelrooms/hotelrooms_page.PNG)
 
 #### Create
@@ -76,7 +82,7 @@ Assign amenities to individual rooms at Async Inn locations across the country.
 ![Delete Room Amenities](Assets/roomamenities/roomamenities_page_delete.PNG)
 
 ### Amenities Page
-Create, edit, view, and delete amenities available at any Async Inn location across the country.
+Create, edit, and delete amenities available at any Async Inn location across the country.
 ![Amenities Page](Assets/amenities/amenities_page.PNG)
 
 #### Create
