@@ -19,7 +19,7 @@ namespace AsyncInn.Models
         public Layout Layout { get; set; }
 
         // navigation properties
-        public ICollection<HotelRoom> HotelRoom { get; set; }
+        public ICollection<HotelRoom> HotelRooms { get; set; }
         public ICollection<RoomAmenities> RoomAmenities { get; set; }
     }
 
