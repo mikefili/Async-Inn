@@ -90,6 +90,3 @@ Create, edit, and delete amenities available at any Async Inn location across th
 
 #### Delete
 ![Delete Amenity](Assets/amenities/amenities_page_delete.PNG)
-
-## System Design
-![DB Schema](Assets/SchemaAsyncInn.png)
