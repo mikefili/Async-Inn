@@ -499,4 +499,143 @@ namespace UnitTests_AsyncInn
             }
         }
     }
+
+    public class HotelRoomsUnitTests
+    {
+        [Fact]
+        public void CanGetRoomHotelID()
+        {
+            HotelRoom hotelRoom = new HotelRoom();
+            hotelRoom.HotelID = 1;
+
+            Assert.True(hotelRoom.HotelID == 1);
+        }
+
+        [Fact]
+        public void CanSetRoomHotelID()
+        {
+            HotelRoom hotelRoom = new HotelRoom();
+            hotelRoom.HotelID = 1;
+            hotelRoom.HotelID = 2;
+
+            Assert.True(hotelRoom.HotelID == 2);
+        }
+
+        [Fact]
+        public void CanGetRoomID()
+        {
+            HotelRoom hotelRoom = new HotelRoom();
+            hotelRoom.RoomID = 1;
+
+            Assert.True(hotelRoom.RoomID == 1);
+        }
+
+        [Fact]
+        public void CanSetRoomID()
+        {
+            HotelRoom hotelRoom = new HotelRoom();
+            hotelRoom.RoomID = 1;
+            hotelRoom.RoomID = 2;
+
+            Assert.True(hotelRoom.RoomID == 2);
+        }
+
+        [Fact]
+        public void CanGetRoomNumber()
+        {
+            HotelRoom hotelRoom = new HotelRoom();
+            hotelRoom.RoomNumber = 1;
+
+            Assert.True(hotelRoom.RoomNumber == 1);
+        }
+
+        [Fact]
+        public void CanSetRoomNumber()
+        {
+            HotelRoom hotelRoom = new HotelRoom();
+            hotelRoom.RoomNumber = 1;
+            hotelRoom.RoomNumber = 2;
+
+            Assert.True(hotelRoom.RoomNumber == 2);
+        }
+
+        [Fact]
+        public void CanGetRoomRate()
+        {
+            HotelRoom hotelRoom = new HotelRoom();
+            hotelRoom.Rate = 100.00m;
+
+            Assert.True(hotelRoom.Rate == 100.00m);
+        }
+
+        [Fact]
+        public void CanSetRoomRate()
+        {
+            HotelRoom hotelRoom = new HotelRoom();
+            hotelRoom.Rate = 100.00m;
+            hotelRoom.Rate = 200.00m;
+
+            Assert.True(hotelRoom.Rate == 200.00m);
+        }
+
+        [Fact]
+        public void CanGetRoomPetFriendliness()
+        {
+            HotelRoom hotelRoom = new HotelRoom();
+            hotelRoom.PetFriendly = true;
+
+            Assert.True(hotelRoom.PetFriendly);
+        }
+
+        [Fact]
+        public void CanSetRoomPetFriendliness()
+        {
+            HotelRoom hotelRoom = new HotelRoom();
+            hotelRoom.PetFriendly = true;
+            hotelRoom.PetFriendly = false;
+
+            Assert.False(hotelRoom.PetFriendly);
+        }
+    }
+
+    public class RoomAmenitiesUnitTests
+    {
+        [Fact]
+        public void CanGetRoomAmenitiesAmenitiesID()
+        {
+            RoomAmenities roomAmenities = new RoomAmenities();
+            roomAmenities.AmenitiesID = 1;
+
+            Assert.True(roomAmenities.AmenitiesID == 1);
+        }
+
+        [Fact]
+        public void CanSetRoomAmenitiesAmenitiesID()
+        {
+            RoomAmenities roomAmenities = new RoomAmenities();
+            roomAmenities.AmenitiesID = 1;
+            roomAmenities.AmenitiesID = 2;
+
+            Assert.True(roomAmenities.AmenitiesID == 2);
+        }
+
+        [Fact]
+        public void CanGetRoomAmenitiesRoomID()
+        {
+            RoomAmenities roomAmenities = new RoomAmenities();
+            roomAmenities.RoomID = 1;
+
+            Assert.True(roomAmenities.RoomID == 1);
+        }
+
+        [Fact]
+        public void CanSetRoomAmenitiesRoomID()
+        {
+            RoomAmenities roomAmenities = new RoomAmenities();
+            roomAmenities.RoomID = 1;
+            roomAmenities.RoomID = 2;
+
+            Assert.True(roomAmenities.RoomID == 2);
+        }
+    }
 }
