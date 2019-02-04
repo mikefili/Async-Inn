@@ -25,12 +25,9 @@
                         <input class="" asp-for="PetFriendly" /> @Html.DisplayNameFor(model => model.PetFriendly)
                     </label>
                     <input type="submit" value="Save" class="button" />
-                    <p class="center pad-top-xs">        <a asp-action="Index">Back to List</a></p>
+                    <p class="center pad-top-xs"><a asp-action="Index">Back to List</a></p>
                 </div>
             </div>
         </form>
     </div>
 </div>
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

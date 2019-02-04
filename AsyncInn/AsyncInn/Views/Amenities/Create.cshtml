@@ -15,16 +15,11 @@
                     <input asp-for="Name" class="input" />
                     <span asp-validation-for="Name" class=""></span>
                     <input type="submit" value="Create" class="button" />
+                    <div>
+                        <a asp-action="Index">Back to List</a>
+                    </div>
                 </div>
             </div>
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
