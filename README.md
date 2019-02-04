@@ -25,65 +25,68 @@ Welcome, Async Inn staff, to the your new Administrator Portal. Use this applica
 
 ### Hotels Page
 Create, edit, view, and delete Async Inn locations across the country.
-![Hotels Page](Assets/hotel_page.PNG)
+![Hotels Page](Assets/hotel/hotel_page.PNG)
 
 #### Create
-![Create Hotel](Assets/hotel_page_create.PNG)
+![Create Hotel](Assets/hotel/hotel_page_create.PNG)
 
 #### Edit
-![Edit Hotel](Assets/hotel_page_edit.PNG)
-
-#### View
-![View Hotel](Assets/hotel_page_read.PNG)
+![Edit Hotel](Assets/hotel/hotel_page_edit.PNG)
 
 #### Delete
-![Delete Hotel](Assets/hotel_page_delete.PNG)
+![Delete Hotel](Assets/hotel/hotel_page_delete.PNG)
 
 ### Rooms Page
 Create, edit, view, and delete rooms at any Async Inn location across the country.
-![Rooms Page](Assets/room_page.PNG)
+![Rooms Page](Assets/room/room_page.PNG)
 
 #### Create
-![Create Room](Assets/room_page_create.PNG)
+![Create Room](Assets/room/room_page_create.PNG)
 
 #### Edit
-![Edit Room](Assets/room_page_edit.PNG)
-
-#### View
-![View Room](Assets/room_page_read.PNG)
+![Edit Room](Assets/room/room_page_edit.PNG)
 
 #### Delete
-![Delete Room](Assets/room_page_delete.PNG)
+![Delete Room](Assets/room/room_page_delete.PNG)
 
 ### Hotel Rooms Page
 Create, edit, view, and delete individual rooms at Async Inn locations across the country.
-![Hotel Rooms Page](Assets/hotelrooms_page.PNG)
+![Hotel Rooms Page](Assets/hotelrooms/hotelrooms_page.PNG)
 
 #### Create
-![Create Hotel Room](Assets/hotelrooms_page_create.PNG)
+![Create Hotel Room](Assets/hotelrooms/hotelrooms_page_create.PNG)
+
+#### Edit
+![Edit Hotel Room](Assets/hotelrooms/hotelrooms_page_edit.PNG)
+
+#### Delete
+![Delete Hotel Room](Assets/hotelrooms/hotelrooms_page_delete.PNG)
 
 ### Room Amenities Page
 Assign amenities to individual rooms at Async Inn locations across the country.
-![Room Amenities Page](Assets/roomamenities_page.PNG)
+![Room Amenities Page](Assets/roomamenities/roomamenities_page.PNG)
 
 #### Create
-![Create Room Amenity](Assets/roomamenities_page_create.PNG)
+![Create Room Amenity](Assets/roomamenities/roomamenities_page_create.PNG)
+
+#### Edit
+![Edit Room Amenities](Assets/roomamenities/roomamenities_page_edit.PNG)
+
+#### Delete
+![Delete Room Amenities](Assets/roomamenities/roomamenities_page_delete.PNG)
 
 ### Amenities Page
 Create, edit, view, and delete amenities available at any Async Inn location across the country.
-![Amenities Page](Assets/amenities_page.PNG)
+![Amenities Page](Assets/amenities/amenities_page.PNG)
 
 #### Create
-![Create Amenity](Assets/amenities_page_create.PNG)
+![Create Amenity](Assets/amenities/amenities_page_create.PNG)
 
 #### Edit
-![Edit Amenity](Assets/amenities_page_edit.PNG)
-
-#### View
-![View Amenity](Assets/amenities_page_read.PNG)
+![Edit Amenity](Assets/amenities/amenities_page_edit.PNG)
 
 #### Delete
-![Delete Amenity](Assets/amenities_page_delete.PNG)
+![Delete Amenity](Assets/amenities/amenities_page_delete.PNG)
 
 ## System Design
 ![DB Schema](Assets/SchemaAsyncInn.png)
