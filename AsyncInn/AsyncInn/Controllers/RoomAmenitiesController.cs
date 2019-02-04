@@ -91,9 +91,9 @@ namespace AsyncInn.Controllers
         // POST: RoomAmenities/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AmenitiesID,RoomID")] RoomAmenities roomAmenities)
+        public async Task<IActionResult> Edit(int amenityID, int roomID, [Bind("AmenitiesID,RoomID")] RoomAmenities roomAmenities)
         {
-            if (id != roomAmenities.AmenitiesID)
+            if (amenityID != roomAmenities.AmenitiesID || roomID != roomAmenities.RoomID)
             {
                 return NotFound();
             }
@@ -107,7 +107,7 @@ namespace AsyncInn.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!RoomAmenitiesExists(roomAmenities.AmenitiesID))
+                    if (!RoomAmenitiesExists(roomAmenities.AmenitiesID, roomAmenities.RoomID))
                     {
                         return NotFound();
                     }
@@ -135,6 +135,7 @@ namespace AsyncInn.Controllers
                 .Include(r => r.Amenities)
                 .Include(r => r.Room)
                 .FirstOrDefaultAsync(m => m.AmenitiesID == amenityID && m.RoomID == roomID);
+
             if (roomAmenities == null)
             {
                 return NotFound();
@@ -154,9 +155,9 @@ namespace AsyncInn.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool RoomAmenitiesExists(int id)
+        private bool RoomAmenitiesExists(int amenityID, int roomID)
         {
-            return _context.RoomAmenities.Any(e => e.AmenitiesID == id);
+            return _context.RoomAmenities.Any(e => e.AmenitiesID == amenityID && e.RoomID == roomID);
         }
     }
 }

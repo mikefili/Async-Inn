@@ -188,11 +188,64 @@ namespace UnitTests_AsyncInn
 
     public class RoomsUnitTests
     {
+        [Fact]
+        public void CanGetNameOfRoom()
+        {
+            Room room = new Room();
+            room.Name = "Standard Studio";
 
+            Assert.Equal("Standard Studio", room.Name);
+        }
+
+        [Fact]
+        public void CanSetNameOfRoom()
+        {
+            Room room = new Room();
+            room.Name = "Standard Studio";
+            room.Name = "Studio";
+
+            Assert.Equal("Studio", room.Name);
+        }
+
+        [Fact]
+        public void CanGetLayoutOfRoom()
+        {
+            Room room = new Room();
+            room.Layout = Layout.Studio;
+
+            Assert.Equal(Layout.Studio, room.Layout);
+        }
+
+        [Fact]
+        public void CanSetLayoutOfRoom()
+        {
+            Room room = new Room();
+            room.Layout = Layout.Studio;
+            room.Layout = Layout.TwoBedroom;
+
+            Assert.Equal(Layout.TwoBedroom, room.Layout);
+        }
     }
 
     public class AmenitiesUnitTests
     {
+        [Fact]
+        public void CanGetNameOfAmenity()
+        {
+            Amenities amenities = new Amenities();
+            amenities.Name = "Air Conditioning";
 
+            Assert.Equal("Air Conditioning", amenities.Name);
+        }
+
+        [Fact]
+        public void CanSetNameOfAmenity()
+        {
+            Amenities amenities = new Amenities();
+            amenities.Name = "Air Conditioning";
+            amenities.Name = "Heading/Cooling";
+
+            Assert.Equal("Heading/Cooling", amenities.Name);
+        }
     }
 }

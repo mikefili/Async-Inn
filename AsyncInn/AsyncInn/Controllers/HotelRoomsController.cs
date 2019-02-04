@@ -180,6 +180,7 @@ namespace AsyncInn.Controllers
                 .Include(h => h.Hotel)
                 .Include(h => h.Room)
                 .FirstOrDefaultAsync(m => m.HotelID == hotelID && m.RoomID == roomID);
+
             if (hotelRoom == null)
             {
                 return NotFound();
