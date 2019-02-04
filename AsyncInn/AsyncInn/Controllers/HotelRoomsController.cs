@@ -83,12 +83,31 @@ namespace AsyncInn.Controllers
         /// <returns>Redirects user back to HotelRoom index view</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("HotelID,RoomID,RoomNumber,Rate,PetFriendly")] HotelRoom hotelRoom)
+        public async Task<IActionResult> Create(int HotelID, int RoomNumber, [Bind("HotelID,RoomID,RoomNumber,Rate,PetFriendly")] HotelRoom hotelRoom)
         {
+            if (RoomNumber != hotelRoom.RoomNumber)
+            {
+                var concurrency = _context.HotelRooms.Where(m => m.HotelID == hotelRoom.HotelID && m.RoomNumber == hotelRoom.RoomNumber);
+                if (concurrency != null)
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+            }
             if (ModelState.IsValid)
             {
-                _context.Add(hotelRoom);
-                await _context.SaveChangesAsync();
+                try
+                {
+                    _context.Add(hotelRoom);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!HotelRoomExists(hotelRoom.HotelID, hotelRoom.RoomID))
+                    {
+                        return NotFound("Page Not Found");
+                    }
+                    throw;
+                }
                 return RedirectToAction(nameof(Index));
             }
             ViewData["HotelID"] = new SelectList(_context.Hotels, "ID", "Name", hotelRoom.HotelID);

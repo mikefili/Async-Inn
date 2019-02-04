@@ -89,44 +89,44 @@ namespace AsyncInn.Controllers
         }
 
         // POST: RoomAmenities/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int amenityID, int roomID, [Bind("AmenitiesID,RoomID")] RoomAmenities roomAmenities)
-        {
-            if (amenityID != roomAmenities.AmenitiesID || roomID != roomAmenities.RoomID)
-            {
-                return NotFound();
-            }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Edit(int amenityID, int roomID, [Bind("AmenitiesID,RoomID")] RoomAmenities roomAmenities)
+        //{
+        //    if (amenityID != roomAmenities.AmenitiesID || roomID != roomAmenities.RoomID)
+        //    {
+        //        return NotFound();
+        //    }
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(roomAmenities);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!RoomAmenitiesExists(roomAmenities.AmenitiesID, roomAmenities.RoomID))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["AmenitiesID"] = new SelectList(_context.Amenities, "ID", "Name", roomAmenities.AmenitiesID);
-            ViewData["RoomID"] = new SelectList(_context.Rooms, "ID", "Name", roomAmenities.RoomID);
-            return View(roomAmenities);
-        }
+        //    if (ModelState.IsValid)
+        //    {
+        //        try
+        //        {
+        //            _context.Update(roomAmenities);
+        //            await _context.SaveChangesAsync();
+        //        }
+        //        catch (DbUpdateConcurrencyException)
+        //        {
+        //            if (!RoomAmenitiesExists(roomAmenities.AmenitiesID, roomAmenities.RoomID))
+        //            {
+        //                return NotFound();
+        //            }
+        //            else
+        //            {
+        //                throw;
+        //            }
+        //        }
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    ViewData["AmenitiesID"] = new SelectList(_context.Amenities, "ID", "Name", roomAmenities.AmenitiesID);
+        //    ViewData["RoomID"] = new SelectList(_context.Rooms, "ID", "Name", roomAmenities.RoomID);
+        //    return View(roomAmenities);
+        //}
 
         // GET: RoomAmenities/Delete/5
-        public async Task<IActionResult> Delete(int? amenityID, int? roomID)
+        public async Task<IActionResult> Delete(int? roomID, int? amenityID)
         {
-            if (amenityID == null || roomID == null)
+            if (roomID == null || amenityID == null)
             {
                 return NotFound();
             }
@@ -155,9 +155,9 @@ namespace AsyncInn.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool RoomAmenitiesExists(int amenityID, int roomID)
+        private bool RoomAmenitiesExists(int id)
         {
-            return _context.RoomAmenities.Any(e => e.AmenitiesID == amenityID && e.RoomID == roomID);
+            return _context.RoomAmenities.Any(e => e.AmenitiesID == id);
         }
     }
 }

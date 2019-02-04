@@ -13,6 +13,7 @@ namespace AsyncInn.Models
 
         [Required(ErrorMessage = "Please provide a number for the room")]
         [Display(Name = "Room Number   ")]
+        [ConcurrencyCheck]
         public int RoomNumber { get; set; }
 
         [Required(ErrorMessage = "Please provide a rate for the room")]

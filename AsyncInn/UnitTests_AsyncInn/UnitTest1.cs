@@ -149,7 +149,12 @@ namespace UnitTests_AsyncInn
                 // Arrange
                 Hotel hotel = new Hotel();
                 hotel.ID = 1;
-                hotel.Name = "Downtown Seattle";
+                hotel.Name = "Test Hotel";
+                hotel.StreetAddress = "123 Test St";
+                hotel.City = "Test City";
+                hotel.State = "TS";
+                hotel.ZipCode = "12345";
+                hotel.Phone = "(123) 456-7890";
 
                 // Act
                 HotelManagementService hotelManagementService = new HotelManagementService(context);
@@ -162,28 +167,34 @@ namespace UnitTests_AsyncInn
             }
         }
 
-        //[Fact]
-        //public async void CanDeleteHotel()
-        //{
-        //    DbContextOptions<AsyncInnDbContext> options = new DbContextOptionsBuilder<AsyncInnDbContext>().UseInMemoryDatabase("DeleteHotel").Options;
+        [Fact]
+        public async void CanDeleteHotel()
+        {
+            DbContextOptions<AsyncInnDbContext> options = new DbContextOptionsBuilder<AsyncInnDbContext>().UseInMemoryDatabase("DeleteHotel").Options;
 
-        //    using (AsyncInnDbContext context = new AsyncInnDbContext(options))
-        //    {
-        //        // Arrange
-        //        Hotel hotel = new Hotel();
-        //        hotel.ID = 1;
-        //        hotel.Name = "Downtown Seattle";
+            using (AsyncInnDbContext context = new AsyncInnDbContext(options))
+            {
+                // Arrange
+                Hotel hotel = new Hotel();
+                hotel.ID = 1;
+                hotel.Name = "Test Hotel";
+                hotel.StreetAddress = "123 Test St";
+                hotel.City = "Test City";
+                hotel.State = "TS";
+                hotel.ZipCode = "12345";
+                hotel.Phone = "(123) 456-7890";
 
-        //        // Act
-        //        HotelManagementService hotelManagementService = new HotelManagementService(context);
-        //        await hotelManagementService.DeleteHotel(hotel.ID);
-        //        var result = context.Hotels.FirstOrDefault(h => h.ID == hotel.ID);
+                // Act
+                HotelManagementService hotelManagementService = new HotelManagementService(context);
+                await hotelManagementService.CreateHotel(hotel);
+                await hotelManagementService.DeleteHotel(hotel.ID);
+                var result = context.Hotels.FirstOrDefault(h => h.ID == hotel.ID);
 
 
-        //        // Assert
-        //        Assert.Equal(hotel, result);
-        //    }
-        //}
+                // Assert
+                Assert.Null(result);
+            }
+        }
     }
 
     public class RoomsUnitTests
