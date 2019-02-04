@@ -37,7 +37,13 @@ namespace AsyncInn.Models.Services
 
         public async Task<IEnumerable<Hotel>> GetHotels()
         {
-            return await _context.Hotels.ToListAsync();
+            var hotels = await _context.Hotels.ToListAsync();
+
+            foreach (Hotel item in hotels)
+            {
+                item.HotelRooms = await _context.HotelRooms.Where(h => h.HotelID == item.ID).ToListAsync();
+            }
+            return hotels;
         }
 
         public async Task UpdateHotel(Hotel hotel)

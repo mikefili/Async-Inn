@@ -26,6 +26,16 @@ namespace AsyncInn.Models.Services
         public async Task DeleteRoom(int id)
         {
             Room room = _context.Rooms.FirstOrDefault(r => r.ID == id);
+            IEnumerable<RoomAmenities> roomAmenities = _context.RoomAmenities.ToList().Where(a => a.RoomID == room.ID);
+            foreach (RoomAmenities item in roomAmenities)
+            {
+                _context.RoomAmenities.Remove(item);
+            }
+            IEnumerable<HotelRoom> hotelRooms = _context.HotelRooms.ToList().Where(r => r.RoomID == room.ID);
+            foreach (HotelRoom item in hotelRooms)
+            {
+                _context.HotelRooms.Remove(item);
+            }
             _context.Rooms.Remove(room);
             await _context.SaveChangesAsync();
         }
@@ -37,7 +47,12 @@ namespace AsyncInn.Models.Services
 
         public async Task<IEnumerable<Room>> GetRooms()
         {
-            return await _context.Rooms.ToListAsync();
+            var rooms = await _context.Rooms.ToListAsync();
+            foreach (Room item in rooms)
+            {
+                item.RoomAmenities = await _context.RoomAmenities.Where(r => r.RoomID == item.ID).ToListAsync();
+            }
+            return rooms;
         }
 
         public async Task UpdateRoom(Room room)

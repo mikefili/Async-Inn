@@ -2,56 +2,41 @@
 
 @{
     ViewData["Title"] = "Index";
+    Layout = "_Layout";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Async Inn Admin: </title>
-    <link href="~/Reset.css" rel="stylesheet" />
-    <link href="~/BaseStyles.css" rel="stylesheet" />
-</head>
-<body>
-    <h1 class="welcome">Welcome to the <span class="logo">ASYNC INN</span> Admin Page</h1>
-    <ul class="navigation">
-        <li><a href="~/" class="nav-s">Home</a></li>
-        <li><a href="~/Hotels" class="nav-s">Hotels</a></li>
-        <li><a href="~/Rooms" class="nav-s">Rooms</a></li>
-        <li><a href="~/HotelRooms" class="on-page">Room Details</a></li>
-        <li><a href="~/RoomAmenities" class="nav-s">Update Amenities</a></li>
-        <li><a href="~/Amenities" class="nav-s">Amenities</a></li>
-    </ul>
+<h2 class="pad-top-s CRUD"></h2>
 
-    <h2 class="pad-top-s CRUD"></h2>
-
-    <p>
-        <a asp-action="Create" class="pad-top-s CRUD">Edit Hotel Room Details</a>
-    </p>
-    <table class="center">
+<p>
+    <a asp-action="Create" class="pad-top-s CRUD">Create A Hotel Room</a>
+</p>
+<div class="center">
+    <table class="grey container-xl">
         <thead>
             <tr>
-                <th>
+                <th class="pad-top-s emphasize-caps">
                     @Html.DisplayNameFor(model => model.RoomNumber)
                 </th>
-                <th>
+                <th class="emphasize-caps">
                     @Html.DisplayNameFor(model => model.Rate)
                 </th>
-                <th>
+                <th class="emphasize-caps">
                     @Html.DisplayNameFor(model => model.PetFriendly)
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Hotel)
+                <th class="emphasize-caps">
+                    @Html.DisplayNameFor(model => model.Hotel) ADDRESS
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Room)
+                <th class="emphasize-caps">
+                    HOTEL
+                    <p>@Html.DisplayNameFor(model => model.Room) STYLE</p>
                 </th>
-                <th></th>
+                <th class="emphasize-caps">UPDATE ROOM</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>
+                    <td class="pad-top-xs">
                         @Html.DisplayFor(modelItem => item.RoomNumber)
                     </td>
                     <td>
@@ -61,19 +46,17 @@
                         @Html.DisplayFor(modelItem => item.PetFriendly)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Hotel.FormattedAddress)
+                        @Html.DisplayFor(modelItem => item.Hotel.StreetAddress) <p>@Html.DisplayFor(modelItem => item.Hotel.City), @Html.DisplayFor(modelItem => item.Hotel.State) @Html.DisplayFor(modelItem => item.Hotel.ZipCode)</p>
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Room.Name)
                     </td>
-                    <td>
+                    <td class="container-s">
                         @Html.ActionLink("Edit", "Edit", new { item.HotelID, item.RoomID }) |
-                        @Html.ActionLink("Details", "Details", new { item.HotelID, item.RoomID }) |
                         @Html.ActionLink("Delete", "Delete", new { item.HotelID, item.RoomID })
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-</body>
-</html>
+</div>

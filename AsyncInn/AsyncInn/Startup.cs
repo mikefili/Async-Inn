@@ -16,20 +16,21 @@ namespace AsyncInn
 {
     public class Startup
     {
-        public IConfiguration Configuration { get;
-        }
+        public IConfiguration Configuration { get; }
 
         // This method configures dependency injection
-        public Startup(IConfiguration configuration)
+        public Startup()
         {
-            Configuration = configuration;
+            var builder = new ConfigurationBuilder().AddEnvironmentVariables();
+            builder.AddUserSecrets<Startup>();
+            Configuration = builder.Build();
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddDbContext<AsyncInnDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<AsyncInnDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:ProductionConnection"]));
             services.AddScoped<IHotelManager, HotelManagementService>();
             services.AddScoped<IRoomManager, RoomManagementService>();
             services.AddScoped<IAmenityManager, AmenityManagementService>();

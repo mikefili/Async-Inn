@@ -2,48 +2,27 @@
 
 @{
     ViewData["Title"] = "Details";
+    Layout = "_Layout";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Async Inn Admin: </title>
-    <link href="~/Reset.css" rel="stylesheet" />
-    <link href="~/BaseStyles.css" rel="stylesheet" />
-</head>
-<body>
-    <h1 class="welcome">Welcome to the <span class="logo">ASYNC INN</span> Admin Page</h1>
-    <ul class="navigation">
-        <li><a href="~/" class="nav-s">Home</a></li>
-        <li><a href="~/Hotels" class="nav-s">Hotels</a></li>
-        <li><a href="~/Rooms" class="nav-s">Rooms</a></li>
-        <li><a href="~/HotelRooms" class="nav-s">Room Details</a></li>
-        <li><a href="~/RoomAmenities" class="on-page">Update Amenities</a></li>
-        <li><a href="~/Amenities" class="nav-s">Amenities</a></li>
-    </ul>
-
-    <h2 class="pad-top-s CRUD">View Amenity Details</h2>
-    <div>
-        <h4>RoomAmenities</h4>
-        <hr />
-        <dl class="center">
-            <dt class="">
-                @Html.DisplayNameFor(model => model.Amenities)
-            </dt>
-            <dd class="">
-                @Html.DisplayFor(model => model.Amenities.Name)
-            </dd>
-            <dt class="">
-                @Html.DisplayNameFor(model => model.Room)
-            </dt>
-            <dd class="">
-                @Html.DisplayFor(model => model.Room.Name)
-            </dd>
-        </dl>
-    </div>
-    <div>
-        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-        <a asp-action="Index">Back to List</a>
-    </div>
-
-</body>
-</html>
+<h2 class="pad-top-s CRUD">View Amenity Details</h2>
+<div>
+    <h4>RoomAmenities</h4>
+    <dl class="center">
+        <dt class="">
+            @Html.DisplayNameFor(model => model.Amenities)
+        </dt>
+        <dd class="">
+            @Html.DisplayFor(model => model.Amenities.Name)
+        </dd>
+        <dt class="">
+            @Html.DisplayNameFor(model => model.Room)
+        </dt>
+        <dd class="">
+            @Html.DisplayFor(model => model.Room.Name)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -2,73 +2,51 @@
 
 @{
     ViewData["Title"] = "Create";
+    Layout = "_Layout";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Async Inn Admin: </title>
-    <link href="~/Reset.css" rel="stylesheet" />
-    <link href="~/BaseStyles.css" rel="stylesheet" />
-</head>
-<body>
-    <h1 class="welcome">Welcome to the <span class="logo">ASYNC INN</span> Admin Page</h1>
-    <ul class="navigation">
-        <li><a href="~/" class="nav-s">Home</a></li>
-        <li><a href="~/Hotels" class="on-page">Hotels</a></li>
-        <li><a href="~/Rooms" class="nav-s">Rooms</a></li>
-        <li><a href="~/HotelRooms" class="nav-s">Room Details</a></li>
-        <li><a href="~/RoomAmenities" class="nav-s">Update Amenities</a></li>
-        <li><a href="~/Amenities" class="nav-s">Amenities</a></li>
-    </ul>
-    <h2 class="pad-top-s CRUD">Create A Hotel</h2>
-    <hr />
+<h2 class="pad-top-s CRUD">Create A Hotel</h2>
+<div class="center">
     <div class="center">
-        <div class="center">
-            <form asp-action="Create">
-                <div asp-validation-summary="ModelOnly" class=""></div>
-                <div class="">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class=""></div>
+            <div class="grey container-m">
+                <div class="pad-top-xs pad-bottom-xs">
                     <label asp-for="Name" class=""></label>
                     <input asp-for="Name" class="" />
                     <span asp-validation-for="Name" class=""></span>
                 </div>
-                <div class="">
+                <div class="pad-bottom-xs">
                     <label asp-for="StreetAddress" class=""></label>
                     <input asp-for="StreetAddress" class="" />
                     <span asp-validation-for="StreetAddress" class=""></span>
                 </div>
-                <div class="">
+                <div class="pad-bottom-xs">
                     <label asp-for="City" class=""></label>
                     <input asp-for="City" class="" />
                     <span asp-validation-for="City" class=""></span>
                 </div>
-                <div class="">
+                <div class="pad-bottom-xs">
                     <label asp-for="State" class=""></label>
                     <input asp-for="State" class="" />
                     <span asp-validation-for="State" class=""></span>
                 </div>
-                <div class="">
+                <div class="pad-bottom-xs">
                     <label asp-for="ZipCode" class=""></label>
                     <input asp-for="ZipCode" class="" />
                     <span asp-validation-for="ZipCode" class=""></span>
                 </div>
-                <div class="">
+                <div class="pad-bottom-xs">
                     <label asp-for="Phone" class=""></label>
                     <input asp-for="Phone" class="" />
                     <span asp-validation-for="Phone" class=""></span>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Create" class="" />
+                    <input type="submit" value="Create" class="button" />
                 </div>
-            </form>
-        </div>
+                <div>
+                    <a asp-action="Index">Back to List</a>
+                </div>
+            </div>
+        </form>
     </div>
-
-    <div>
-        <a asp-action="Index">Back to List</a>
-    </div>
-
-    @section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    }
-</body>
-</html>
+</div>

@@ -14,7 +14,7 @@ namespace AsyncInn.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.0-rtm-35687")
+                .HasAnnotation("ProductVersion", "2.2.1-servicing-10028")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -95,7 +95,7 @@ namespace AsyncInn.Migrations
                             ID = 1,
                             City = "Seattle",
                             Name = "Downtown Seattle",
-                            Phone = "12065551234",
+                            Phone = "(206) 555-1234",
                             State = "WA",
                             StreetAddress = "123 1st Ave S",
                             ZipCode = "98101"
@@ -105,7 +105,7 @@ namespace AsyncInn.Migrations
                             ID = 2,
                             City = "Seattle",
                             Name = "Ballard",
-                            Phone = "12065551234",
+                            Phone = "(206) 555-5678",
                             State = "WA",
                             StreetAddress = "1 Main St",
                             ZipCode = "98107"
@@ -115,7 +115,7 @@ namespace AsyncInn.Migrations
                             ID = 3,
                             City = "Renton",
                             Name = "Downtown Renton",
-                            Phone = "12065551234",
+                            Phone = "(425) 555-1234",
                             State = "WA",
                             StreetAddress = "1234 Rainier Ave S",
                             ZipCode = "98057"
@@ -125,7 +125,7 @@ namespace AsyncInn.Migrations
                             ID = 4,
                             City = "Bellevue",
                             Name = "Bellevue Square",
-                            Phone = "12065551234",
+                            Phone = "(425) 555-5678",
                             State = "WA",
                             StreetAddress = "1 Bellevue Square",
                             ZipCode = "98004"
@@ -135,7 +135,7 @@ namespace AsyncInn.Migrations
                             ID = 5,
                             City = "Everett",
                             Name = "Everett",
-                            Phone = "12065551234",
+                            Phone = "(360) 555-1234",
                             State = "WA",
                             StreetAddress = "3 Everett Way",
                             ZipCode = "98206"
@@ -234,12 +234,12 @@ namespace AsyncInn.Migrations
             modelBuilder.Entity("AsyncInn.Models.HotelRoom", b =>
                 {
                     b.HasOne("AsyncInn.Models.Hotel", "Hotel")
-                        .WithMany("HotelRoom")
+                        .WithMany("HotelRooms")
                         .HasForeignKey("HotelID")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("AsyncInn.Models.Room", "Room")
-                        .WithMany("HotelRoom")
+                        .WithMany("HotelRooms")
                         .HasForeignKey("RoomID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

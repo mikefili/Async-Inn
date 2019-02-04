@@ -47,6 +47,6 @@ namespace AsyncInn.Models
         public string Phone { get; set; }
 
         // navigation properties
-        public ICollection<HotelRoom> HotelRoom { get; set; }
+        public ICollection<HotelRoom> HotelRooms { get; set; }
     }
 }
